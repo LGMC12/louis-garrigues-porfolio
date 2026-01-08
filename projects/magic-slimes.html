@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Magic Slimes - Puzzle Game 3D inspiré du jeu Rush, développé en solo.">
+    <title>Magic Slimes | Louis Garrigues</title>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Louis Garrigues</a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html#projects" class="nav-link">Portfolio</a></li>
+                <li><a href="../index.html#about" class="nav-link">À Propos</a></li>
+                <li><a href="../index.html#contact" class="nav-link nav-link--cta">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="hero-bg">
+            <div class="hero-glow hero-glow--1"></div>
+            <div class="hero-glow hero-glow--2"></div>
+        </div>
+        <div class="container">
+            <a href="../index.html#projects" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Retour au portfolio
+            </a>
+            <div class="project-hero-content">
+                <span class="project-hero-icon">🟣</span>
+                <h1 class="project-hero-title">Magic Slimes</h1>
+                <p class="project-hero-meta">Rush Puzzle Game 3D • Unity / C#</p>
+                <p class="project-hero-team">Projet solo • Novembre - Décembre 2022</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-page-content">
+        <div class="container">
+            <div class="project-grid">
+                <div class="project-main">
+                    <div class="project-section">
+                        <h2>Description</h2>
+                        <p>Magic Slimes est un projet étudiant développé seul sur Unity en C# de novembre à mi-décembre
+                            2022.</p>
+                        <p>C'est un Puzzle Game 3D reproduisant le gameplay du jeu Rush mais avec un univers différent.
+                            Magic Slimes est composé de 5 niveaux (3 du jeu Rush et 2 originaux).</p>
+                        <p>Le but du jeu est de faire traverser le niveau aux Slimes de leur point de départ à leur
+                            point d'arrivée. Pour cela le jeu est divisé en deux phases : une phase de réflexion et une
+                            autre d'action.</p>
+                        <p>Durant la phase de réflexion, le joueur va être amené à placer des plaques d'actions sur le
+                            sol du niveau afin de faire changer les Slimes de comportement.</p>
+                        <p>Dans la phase d'action, les Slimes vont apparaître, et se déplacer devant eux jusqu'à ce
+                            qu'ils rencontrent un obstacle ou une plaque au quel cas, ils appliqueront le comportement
+                            lié à la plaque.</p>
+                        <p>Si deux slimes entrent en collision ou si un slime tombe, il faut recommencer le niveau.</p>
+                    </div>
+
+                    <div class="project-section">
+                        <h2>Mon travail</h2>
+                        <ul class="work-list">
+                            <li>Animation et juiciness dans le gameplay et dans les écrans</li>
+                            <li>Implémentation complète du gameplay (mouvement des cubes, détection des plaques et des
+                                collisions, actions liées au type de plaque)</li>
+                            <li>Création des assets graphiques sur Illustrator et Photoshop</li>
+                            <li>Level Design des niveaux "Woosh" et "Perimeter"</li>
+                            <li>UI design de l'écran titre, de l'écran de sélection, de l'écran de victoire et de
+                                défaite</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-section project-media">
+                        <h2>Gameplay</h2>
+                        <div class="media-grid">
+                            <figure class="media-item">
+                                <img src="../Gifs & Pics/Magic Slimes/MS_Gameplay.gif" alt="Magic Slimes Gameplay">
+                                <figcaption>Gameplay</figcaption>
+                            </figure>
+                            <figure class="media-item">
+                                <img src="../Gifs & Pics/Magic Slimes/Gameplay integration.gif"
+                                    alt="Gameplay Integration">
+                                <figcaption>Intégration gameplay</figcaption>
+                            </figure>
+                        </div>
+                        <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--color-text-primary);">VFX</h3>
+                        <div class="media-grid">
+                            <figure class="media-item">
+                                <img src="../Gifs & Pics/Magic Slimes/VFX/VFX 1.gif" alt="VFX 1">
+                                <figcaption>VFX 1</figcaption>
+                            </figure>
+                            <figure class="media-item">
+                                <img src="../Gifs & Pics/Magic Slimes/VFX/VFX 2.gif" alt="VFX 2">
+                                <figcaption>VFX 2</figcaption>
+                            </figure>
+                            <figure class="media-item">
+                                <img src="../Gifs & Pics/Magic Slimes/VFX/VFX 3.gif" alt="VFX 3">
+                                <figcaption>VFX 3</figcaption>
+                            </figure>
+                        </div>
+                        <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--color-text-primary);">Interface
+                            Utilisateur</h3>
+                        <div class="media-grid">
+                            <figure class="media-item">
+                                <img src="../Gifs & Pics/Magic Slimes/UI/Title.png" alt="Title Screen">
+                                <figcaption>Écran titre</figcaption>
+                            </figure>
+                            <figure class="media-item">
+                                <img src="../Gifs & Pics/Magic Slimes/UI/Level Selector.png" alt="Level Selector">
+                                <figcaption>Sélection de niveau</figcaption>
+                            </figure>
+                            <figure class="media-item">
+                                <img src="../Gifs & Pics/Magic Slimes/UI/Hud.png" alt="HUD">
+                                <figcaption>Interface en jeu</figcaption>
+                            </figure>
+                            <figure class="media-item">
+                                <img src="../Gifs & Pics/Magic Slimes/UI/Lose.png" alt="Lose Screen">
+                                <figcaption>Écran défaite</figcaption>
+                            </figure>
+                        </div>
+                        <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--color-text-primary);">Level
+                            Design</h3>
+                        <div class="media-grid">
+                            <figure class="media-item">
+                                <img src="../Gifs & Pics/Magic Slimes/LD/Whoosh.png" alt="Whoosh Level">
+                                <figcaption>Niveau Whoosh</figcaption>
+                            </figure>
+                            <figure class="media-item">
+                                <img src="../Gifs & Pics/Magic Slimes/LD/Perimeter.png" alt="Perimeter Level">
+                                <figcaption>Niveau Perimeter</figcaption>
+                            </figure>
+                        </div>
+                        <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--color-text-primary);">Vidéo</h3>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/UemiBl37LPI" title="Magic Slimes Gameplay"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div class="project-section">
+                        <h2>L'équipe</h2>
+                        <div class="team-grid">
+                            <div class="team-member">
+                                <strong>Louis GARRIGUES</strong>
+                                <span>Gameplay Programming & Juiciness / Game Art / UI Design / Level Design</span>
+                            </div>
+                            <div class="team-member">
+                                <strong>Iris SEBIROT</strong>
+                                <span>Musics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="project-sidebar">
+                    <div class="project-info-card">
+                        <h3>Informations</h3>
+                        <dl class="info-list">
+                            <dt>Genre</dt>
+                            <dd>Rush - Puzzle Game 3D</dd>
+                            <dt>Plateforme</dt>
+                            <dd>Web & Android</dd>
+                            <dt>Moteur</dt>
+                            <dd>Unity</dd>
+                            <dt>Langage</dt>
+                            <dd>C#</dd>
+                            <dt>Durée</dt>
+                            <dd>1.5 mois</dd>
+                        </dl>
+                    </div>
+
+                    <div class="project-info-card">
+                        <h3>Mon rôle</h3>
+                        <div class="role-tags">
+                            <span class="tag tag--large">Gameplay Programming</span>
+                            <span class="tag tag--large">Game Art</span>
+                            <span class="tag tag--large">UI Design</span>
+                            <span class="tag tag--large">Level Design</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Louis Garrigues. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="../index.js"></script>
+</body>
+
+</html>
