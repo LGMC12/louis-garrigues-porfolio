@@ -830,6 +830,14 @@ img {
 
 .project-hero-content {
     text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+    background: rgba(10, 10, 15, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .project-hero-icon {
@@ -847,6 +855,7 @@ img {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .project-hero-meta {
@@ -856,8 +865,9 @@ img {
 }
 
 .project-hero-team {
-    color: var(--color-text-muted);
+    color: var(--color-text-secondary);
     font-size: 1rem;
+    font-weight: 500;
 }
 
 .project-page-content {
