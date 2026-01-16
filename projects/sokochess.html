@@ -8,6 +8,7 @@
         content="SokoChess - Puzzle game mélangeant les mécaniques de Sokoban avec les règles des échecs.">
     <title>SokoChess | Louis Garrigues</title>
     <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../carousel.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -71,6 +72,87 @@
                             <li>UI Design</li>
                         </ul>
                     </div>
+
+                    <div class="project-section project-media">
+                        <h2>Aperçu</h2>
+                        <div class="carousel" id="carousel-gameplay">
+                            <div class="carousel-track-container">
+                                <div class="carousel-track">
+                                    <figure class="carousel-slide">
+                                        <img src="../Gifs & Pics/Sokochess/Screen.png" alt="Screenshot">
+                                        <figcaption>Capture d'écran</figcaption>
+                                    </figure>
+                                    <figure class="carousel-slide">
+                                        <img src="../Gifs & Pics/Sokochess/Gameplay.gif" alt="Gameplay">
+                                        <figcaption>Gameplay</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                            <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide"><svg
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M15 18l-6-6 6-6" />
+                                </svg></button>
+                            <button class="carousel-btn carousel-btn--next" aria-label="Next slide"><svg
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M9 18l6-6-6-6" />
+                                </svg></button>
+                            <div class="carousel-indicators"></div>
+                        </div>
+                        <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--color-text-primary);">Level
+                            Design</h3>
+                        <div class="carousel" id="carousel-ld">
+                            <div class="carousel-track-container">
+                                <div class="carousel-track">
+                                    <figure class="carousel-slide">
+                                        <img src="../Gifs & Pics/Sokochess/LD/LD_1.png" alt="Level 1">
+                                        <figcaption>Niveau 1</figcaption>
+                                    </figure>
+                                    <figure class="carousel-slide">
+                                        <img src="../Gifs & Pics/Sokochess/LD/LD_2.png" alt="Level 2">
+                                        <figcaption>Niveau 2</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                            <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide"><svg
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M15 18l-6-6 6-6" />
+                                </svg></button>
+                            <button class="carousel-btn carousel-btn--next" aria-label="Next slide"><svg
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M9 18l6-6-6-6" />
+                                </svg></button>
+                            <div class="carousel-indicators"></div>
+                        </div>
+                        <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--color-text-primary);">Interface
+                            Utilisateur</h3>
+                        <div class="carousel" id="carousel-ui">
+                            <div class="carousel-track-container">
+                                <div class="carousel-track">
+                                    <figure class="carousel-slide">
+                                        <img src="../Gifs & Pics/Sokochess/UI/MainScreen.png" alt="Main Screen">
+                                        <figcaption>Écran principal</figcaption>
+                                    </figure>
+                                    <figure class="carousel-slide">
+                                        <img src="../Gifs & Pics/Sokochess/UI/Hud.png" alt="HUD">
+                                        <figcaption>Interface en jeu</figcaption>
+                                    </figure>
+                                    <figure class="carousel-slide">
+                                        <img src="../Gifs & Pics/Sokochess/UI/WinScreen.png" alt="Win Screen">
+                                        <figcaption>Écran victoire</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                            <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide"><svg
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M15 18l-6-6 6-6" />
+                                </svg></button>
+                            <button class="carousel-btn carousel-btn--next" aria-label="Next slide"><svg
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M9 18l6-6-6-6" />
+                                </svg></button>
+                            <div class="carousel-indicators"></div>
+                        </div>
+                    </div>
                 </div>
 
                 <aside class="project-sidebar">
@@ -111,6 +193,7 @@
     </footer>
 
     <script src="../index.js"></script>
+    <script src="../carousel.js"></script>
 </body>
 
 </html>

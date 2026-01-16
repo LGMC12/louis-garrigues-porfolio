@@ -8,6 +8,7 @@
         content="Solar Leap - Puzzle Platformer 3D développé pour PC et Nintendo Switch. Projet étudiant réalisé par une équipe de 18 personnes.">
     <title>Solar Leap | Louis Garrigues</title>
     <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../carousel.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -32,8 +33,10 @@
     </nav>
 
     <!-- Project Hero -->
-    <section class="project-hero">
-        <div class="hero-bg">
+    <section class="project-hero"
+        style="background-image: url('../Gifs & Pics/Solar Leap/AFFICHE_CRITERIUM_A0_PAYSAGE.jpg'); background-size: cover; background-position: center;">
+        <div class="hero-bg"
+            style="background: linear-gradient(to bottom, rgba(10, 10, 15, 0.6), rgba(10, 10, 15, 0.9));">
             <div class="hero-glow hero-glow--1"></div>
             <div class="hero-glow hero-glow--2"></div>
         </div>
@@ -79,61 +82,148 @@
                         </ul>
                     </div>
 
+                    <div class="project-section">
+                        <h2>Vidéos</h2>
+                        <div class="video-grid">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/4A_KmyMe-6k" title="Solar Leap Walkthrough"
+                                    allowfullscreen></iframe>
+                            </div>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/5Nm6Nom_dcU" title="Solar Leap Trailer"
+                                    allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="project-section project-media">
-                        <h2>Aperçu</h2>
-                        <div class="media-grid">
-                            <figure class="media-item">
-                                <img src="../Gifs & Pics/Solar Leap/VFX/Roots.gif" alt="VFX Roots">
-                                <figcaption>VFX - Racines</figcaption>
-                            </figure>
-                            <figure class="media-item">
-                                <img src="../Gifs & Pics/Solar Leap/VFX/earthquake.gif" alt="VFX Earthquake">
-                                <figcaption>VFX - Tremblement de terre</figcaption>
-                            </figure>
-                            <figure class="media-item">
-                                <img src="../Gifs & Pics/Solar Leap/VFX/dither.gif" alt="VFX Dither">
-                                <figcaption>VFX - Effet Dither</figcaption>
-                            </figure>
-                            <figure class="media-item">
-                                <img src="../Gifs & Pics/Solar Leap/Integration/Seeds.gif" alt="Seeds Integration">
-                                <figcaption>Intégration - Graines</figcaption>
-                            </figure>
-                            <figure class="media-item">
-                                <img src="../Gifs & Pics/Solar Leap/Integration/CloudAndDisk.gif" alt="Cloud and Disk">
-                                <figcaption>Intégration - Nuage et Disque</figcaption>
-                            </figure>
-                            <figure class="media-item">
-                                <img src="../Gifs & Pics/Solar Leap/Integration/MovablePlatform.gif"
-                                    alt="Movable Platform">
-                                <figcaption>Intégration - Plateforme mobile</figcaption>
-                            </figure>
+                        <h2>VFX</h2>
+                        <div class="carousel" id="carousel-vfx">
+                            <div class="carousel-track-container">
+                                <div class="carousel-track">
+                                    <figure class="carousel-slide">
+                                        <img src="../Gifs & Pics/Solar Leap/VFX/Roots.gif" alt="VFX Roots">
+                                        <figcaption>VFX - Racines</figcaption>
+                                    </figure>
+                                    <figure class="carousel-slide">
+                                        <img src="../Gifs & Pics/Solar Leap/VFX/earthquake.gif" alt="VFX Earthquake">
+                                        <figcaption>VFX - Tremblement de terre</figcaption>
+                                    </figure>
+                                    <figure class="carousel-slide">
+                                        <img src="../Gifs & Pics/Solar Leap/VFX/dither.gif" alt="VFX Dither">
+                                        <figcaption>VFX - Effet Dither</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                            <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M15 18l-6-6 6-6" />
+                                </svg>
+                            </button>
+                            <button class="carousel-btn carousel-btn--next" aria-label="Next slide">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M9 18l6-6-6-6" />
+                                </svg>
+                            </button>
+                            <div class="carousel-indicators"></div>
+                        </div>
+                        <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--color-text-primary);">Intégration
+                        </h3>
+                        <div class="carousel" id="carousel-integration">
+                            <div class="carousel-track-container">
+                                <div class="carousel-track">
+                                    <figure class="carousel-slide">
+                                        <img src="../Gifs & Pics/Solar Leap/Integration/Seeds.gif"
+                                            alt="Seeds Integration">
+                                        <figcaption>Intégration - Graines</figcaption>
+                                    </figure>
+                                    <figure class="carousel-slide">
+                                        <img src="../Gifs & Pics/Solar Leap/Integration/CloudAndDisk.gif"
+                                            alt="Cloud and Disk">
+                                        <figcaption>Intégration - Nuage et Disque</figcaption>
+                                    </figure>
+                                    <figure class="carousel-slide">
+                                        <img src="../Gifs & Pics/Solar Leap/Integration/MovablePlatform.gif"
+                                            alt="Movable Platform">
+                                        <figcaption>Intégration - Plateforme mobile</figcaption>
+                                    </figure>
+                                    <figure class="carousel-slide">
+                                        <img src="../Gifs & Pics/Solar Leap/Integration/ground detection.gif"
+                                            alt="Ground Detection">
+                                        <figcaption>Intégration - Détection du sol</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                            <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M15 18l-6-6 6-6" />
+                                </svg>
+                            </button>
+                            <button class="carousel-btn carousel-btn--next" aria-label="Next slide">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M9 18l6-6-6-6" />
+                                </svg>
+                            </button>
+                            <div class="carousel-indicators"></div>
                         </div>
                         <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--color-text-primary);">Interface
                             Utilisateur</h3>
-                        <div class="media-grid">
-                            <figure class="media-item">
-                                <img src="../Gifs & Pics/Solar Leap/UI/SL_Main.png" alt="Menu Principal">
-                                <figcaption>Menu Principal</figcaption>
-                            </figure>
-                            <figure class="media-item">
-                                <img src="../Gifs & Pics/Solar Leap/UI/SL_Pause.png" alt="Menu Pause">
-                                <figcaption>Menu Pause</figcaption>
-                            </figure>
-                            <figure class="media-item">
-                                <img src="../Gifs & Pics/Solar Leap/UI/SL_Option.png" alt="Options">
-                                <figcaption>Options</figcaption>
-                            </figure>
+                        <div class="carousel" id="carousel-ui">
+                            <div class="carousel-track-container">
+                                <div class="carousel-track">
+                                    <figure class="carousel-slide">
+                                        <img src="../Gifs & Pics/Solar Leap/UI/SL_Main.png" alt="Menu Principal">
+                                        <figcaption>Menu Principal</figcaption>
+                                    </figure>
+                                    <figure class="carousel-slide">
+                                        <img src="../Gifs & Pics/Solar Leap/UI/SL_Pause.png" alt="Menu Pause">
+                                        <figcaption>Menu Pause</figcaption>
+                                    </figure>
+                                    <figure class="carousel-slide">
+                                        <img src="../Gifs & Pics/Solar Leap/UI/SL_Option.png" alt="Options">
+                                        <figcaption>Options</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                            <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M15 18l-6-6 6-6" />
+                                </svg>
+                            </button>
+                            <button class="carousel-btn carousel-btn--next" aria-label="Next slide">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M9 18l6-6-6-6" />
+                                </svg>
+                            </button>
+                            <div class="carousel-indicators"></div>
                         </div>
-                        <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--color-text-primary);">Vidéos</h3>
-                        <div class="video-grid">
-                            <div class="video-container">
-                                <iframe src="https://www.youtube.com/embed/4A_KmyMe-6k" title="Solar Leap Video 1"
-                                    allowfullscreen></iframe>
+                        <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--color-text-primary);">
+                            Documentation</h3>
+                        <div class="carousel" id="carousel-docs">
+                            <div class="carousel-track-container">
+                                <div class="carousel-track">
+                                    <figure class="carousel-slide">
+                                        <img src="../Gifs & Pics/Solar Leap/Docs/tdd.png"
+                                            alt="Technical Design Document">
+                                        <figcaption>Technical Design Document</figcaption>
+                                    </figure>
+                                    <figure class="carousel-slide">
+                                        <img src="../Gifs & Pics/Solar Leap/Docs/gfd.png" alt="Game Feel Document">
+                                        <figcaption>Game Feel Document</figcaption>
+                                    </figure>
+                                </div>
                             </div>
-                            <div class="video-container">
-                                <iframe src="https://www.youtube.com/embed/5Nm6Nom_dcU" title="Solar Leap Video 2"
-                                    allowfullscreen></iframe>
-                            </div>
+                            <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M15 18l-6-6 6-6" />
+                                </svg>
+                            </button>
+                            <button class="carousel-btn carousel-btn--next" aria-label="Next slide">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M9 18l6-6-6-6" />
+                                </svg>
+                            </button>
+                            <div class="carousel-indicators"></div>
                         </div>
                     </div>
 
@@ -264,6 +354,7 @@
     </footer>
 
     <script src="../index.js"></script>
+    <script src="../carousel.js"></script>
 </body>
 
 </html>

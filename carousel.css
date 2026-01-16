@@ -1,0 +1,140 @@
+/* ========================================
+   Carousel Component Styles
+   ======================================== */
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    background: var(--color-bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    will-change: transform;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    width: 100%;
+    flex: 0 0 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md);
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.carousel-slide img {
+    max-width: 100%;
+    max-height: 70vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-slide figcaption {
+    margin-top: var(--spacing-sm);
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
+    text-align: center;
+}
+
+/* Navigation Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(18, 18, 26, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--color-text-primary);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: rgba(124, 58, 237, 0.6);
+    border-color: var(--color-accent-primary);
+    box-shadow: 0 0 20px var(--color-accent-glow);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn--prev {
+    left: var(--spacing-sm);
+}
+
+.carousel-btn--next {
+    right: var(--spacing-sm);
+}
+
+.carousel-btn svg {
+    width: 24px;
+    height: 24px;
+    stroke-width: 2;
+}
+
+/* Indicator Dots */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: var(--spacing-sm);
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.carousel-dot:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.carousel-dot.active {
+    background: linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-end));
+    box-shadow: 0 0 10px var(--color-accent-glow);
+    transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .carousel-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .carousel-slide img {
+        max-height: 50vh;
+    }
+}
