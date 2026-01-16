@@ -119,16 +119,19 @@ img {
    ======================================== */
 .navbar {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: var(--spacing-sm);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: var(--max-width);
     height: var(--nav-height);
     background: rgba(10, 10, 15, 0.8);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
     z-index: 1000;
-    transition: background var(--transition-base);
+    transition: all var(--transition-base);
 }
 
 .nav-container {
