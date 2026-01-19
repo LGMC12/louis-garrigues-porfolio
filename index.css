@@ -69,7 +69,6 @@ body {
     line-height: 1.6;
     color: var(--color-text-primary);
     background-color: var(--color-bg-primary);
-    overflow-x: hidden;
 }
 
 a {
@@ -120,18 +119,25 @@ img {
 .navbar {
     position: fixed;
     top: var(--spacing-sm);
-    left: 50%;
-    transform: translateX(-50%);
+    /* Use margin centering instead of transform to avoid GPU layer issues */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     width: 95%;
     max-width: var(--max-width);
     height: var(--nav-height);
-    background: rgba(10, 10, 15, 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(10, 10, 15, 0.98);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-lg);
     z-index: 1000;
-    transition: all var(--transition-base);
+    /* GPU hints to prevent black box during scroll */
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.navbar--scrolled {
+    background: rgba(10, 10, 15, 0.98);
 }
 
 .nav-container {
@@ -280,32 +286,65 @@ img {
     inset: 0;
     overflow: hidden;
     z-index: -1;
+    background:
+        radial-gradient(ellipse 80% 60% at 80% 20%, rgba(124, 58, 237, 0.3) 0%, transparent 50%),
+        radial-gradient(ellipse 70% 50% at 20% 80%, rgba(236, 72, 153, 0.25) 0%, transparent 50%);
 }
 
+/* Hero glow elements - using background gradient on .hero-bg instead */
 .hero-glow {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(120px);
-    opacity: 0.5;
-    animation: float 8s ease-in-out infinite;
+    display: none;
 }
 
-.hero-glow--1 {
-    width: 600px;
-    height: 600px;
-    background: var(--color-accent-primary);
-    top: -20%;
-    right: -10%;
-    animation-delay: 0s;
+/* Performance optimizations for images */
+.project-img,
+.carousel-slide img,
+.media-item img {
+    content-visibility: auto;
+    contain-intrinsic-size: 400px 225px;
 }
 
-.hero-glow--2 {
-    width: 500px;
-    height: 500px;
-    background: var(--color-gradient-end);
-    bottom: -20%;
-    left: -10%;
-    animation-delay: -4s;
+/* ========================================
+   Scroll Reveal Animation
+   ======================================== */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered animation delays for grid items */
+.reveal:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.reveal:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.reveal:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.reveal:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+.reveal:nth-child(5) {
+    transition-delay: 0.4s;
+}
+
+.reveal:nth-child(6) {
+    transition-delay: 0.5s;
+}
+
+.reveal:nth-child(7) {
+    transition-delay: 0.6s;
 }
 
 @keyframes float {
@@ -480,15 +519,16 @@ img {
     border-radius: var(--radius-lg);
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all var(--transition-base);
+    /* Transition for hover (border-color) AND reveal animation (opacity, transform) */
+    transition: border-color var(--transition-base), opacity 0.6s ease-out, transform 0.6s ease-out;
     cursor: pointer;
+    /* Containment for rendering isolation */
+    contain: layout style;
 }
 
 .project-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(124, 58, 237, 0.3);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
-        0 0 40px var(--color-accent-glow);
+    /* Simplified - only border color change, no transforms or shadows */
+    border-color: rgba(124, 58, 237, 0.5);
 }
 
 .project-image {
@@ -496,17 +536,19 @@ img {
     aspect-ratio: 16 / 9;
     background: linear-gradient(135deg, var(--color-bg-secondary), var(--color-bg-card));
     overflow: hidden;
+    /* Containment for rendering isolation */
+    contain: layout style paint;
 }
 
+/* Project images - now using optimized thumbnails */
 .project-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform var(--transition-base);
 }
 
 .project-card:hover .project-img {
-    transform: scale(1.05);
+    /* Hover effect can be re-enabled later if desired */
 }
 
 .project-placeholder {
@@ -523,42 +565,27 @@ img {
 .project-icon {
     font-size: 4rem;
     opacity: 0.8;
-    transition: transform var(--transition-base);
 }
 
 .project-card:hover .project-icon {
-    transform: scale(1.2);
+    /* Transform removed for GPU performance */
 }
 
+/* Project overlay - DISABLED for GPU performance */
 .project-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg,
-            rgba(124, 58, 237, 0.9),
-            rgba(236, 72, 153, 0.9));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity var(--transition-base);
+    display: none;
 }
 
 .project-card:hover .project-overlay {
-    opacity: 1;
+    /* Kept disabled */
 }
 
 .project-view {
-    font-weight: 600;
-    color: white;
-    padding: var(--spacing-xs) var(--spacing-md);
-    border: 2px solid white;
-    border-radius: var(--radius-sm);
-    transform: translateY(10px);
-    transition: transform var(--transition-base);
+    display: none;
 }
 
 .project-card:hover .project-view {
-    transform: translateY(0);
+    /* Kept disabled */
 }
 
 .project-content {
@@ -958,6 +985,14 @@ img {
     border-bottom-color: var(--color-accent-secondary);
 }
 
+.team-category-title {
+    color: var(--color-text-primary);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -1100,13 +1135,26 @@ img {
 
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--spacing-md);
     margin-top: var(--spacing-md);
 }
 
-@media (max-width: 500px) {
+@media (max-width: 900px) {
     .video-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.carousel-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+@media (max-width: 900px) {
+    .carousel-grid {
         grid-template-columns: 1fr;
     }
 }
@@ -1224,14 +1272,5 @@ img {
     }
 }
 
-/* Animations for scroll reveal */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
+/* Animations for scroll reveal - disabled to prevent invisible content */
+/* Elements are now always visible - no scroll reveal animation */

@@ -3,11 +3,28 @@
 // ========================================
 
 document.addEventListener('DOMContentLoaded', () => {
+    initLazyLoading();
     initNavigation();
     initProjectCards();
     initScrollReveal();
     initSmoothScroll();
 });
+
+// ========================================
+// Lazy Loading for Images
+// ========================================
+function initLazyLoading() {
+    // Add lazy loading to all images except first visible ones
+    const allImages = document.querySelectorAll('.carousel-slide img, .project-img, .media-item img');
+    allImages.forEach((img, index) => {
+        // Only lazy load images that aren't immediately visible
+        if (index > 2) {
+            img.loading = 'lazy';
+        }
+        // Add decoding async for better performance
+        img.decoding = 'async';
+    });
+}
 
 // ========================================
 // Navigation
@@ -43,19 +60,22 @@ function initNavigation() {
         }
     });
 
-    // Navbar background on scroll
-    let lastScroll = 0;
+    // Navbar background on scroll - debounced for performance
+    let ticking = false;
     window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-
-        if (currentScroll > 100) {
-            navbar.style.background = 'rgba(10, 10, 15, 0.95)';
-        } else {
-            navbar.style.background = 'rgba(10, 10, 15, 0.8)';
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const currentScroll = window.pageYOffset;
+                if (currentScroll > 100) {
+                    navbar.classList.add('navbar--scrolled');
+                } else {
+                    navbar.classList.remove('navbar--scrolled');
+                }
+                ticking = false;
+            });
+            ticking = true;
         }
-
-        lastScroll = currentScroll;
-    });
+    }, { passive: true });
 }
 
 // ========================================
@@ -101,29 +121,29 @@ function initProjectCards() {
 // Scroll Reveal Animation
 // ========================================
 function initScrollReveal() {
-    const revealElements = document.querySelectorAll('.project-card, .skill-category, .contact-link');
+    const revealElements = document.querySelectorAll('.reveal');
 
-    // Add reveal class to elements
-    revealElements.forEach((el, index) => {
-        el.classList.add('reveal');
-        el.style.transitionDelay = `${index * 0.05}s`;
-    });
+    if (revealElements.length === 0) return;
 
     const observerOptions = {
         root: null,
-        rootMargin: '0px',
+        rootMargin: '0px 0px -50px 0px',
         threshold: 0.1
     };
 
-    const observer = new IntersectionObserver((entries) => {
+    const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('active');
+                entry.target.classList.add('revealed');
+                // Once revealed, stop observing to save resources
+                revealObserver.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    revealElements.forEach(el => observer.observe(el));
+    revealElements.forEach(el => {
+        revealObserver.observe(el);
+    });
 }
 
 // ========================================

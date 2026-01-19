@@ -31,7 +31,8 @@
         </div>
     </nav>
 
-    <section class="project-hero" style="background-image: url('../Gifs & Pics/OpenGL/HSVtoRGB.gif');">
+    <section class="project-hero"
+        style="background-image: url('../Gifs & Pics/OpenGL/3D Cubes/Camera and textured cubes.gif');">
         <div class="hero-bg">
             <div class="hero-glow hero-glow--1"></div>
             <div class="hero-glow hero-glow--2"></div>
@@ -71,83 +72,98 @@
                     </div>
 
                     <div class="project-section project-media">
-                        <h2>Cubes 3D</h2>
-                        <div class="carousel" id="carousel-cubes">
-                            <div class="carousel-track-container">
-                                <div class="carousel-track">
-                                    <figure class="carousel-slide">
-                                        <img src="../Gifs & Pics/OpenGL/3D Cubes/rotating cube.gif" alt="Rotating Cube">
-                                        <figcaption>Cube en rotation</figcaption>
-                                    </figure>
-                                    <figure class="carousel-slide">
-                                        <img src="../Gifs & Pics/OpenGL/3D Cubes/Camera and textured cubes.gif"
-                                            alt="Camera and Textured Cubes">
-                                        <figcaption>Caméra et cubes texturés</figcaption>
-                                    </figure>
+                        <div class="carousel-grid">
+                            <div>
+                                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);">Cubes
+                                    3D</h3>
+                                <div class="carousel" id="carousel-cubes">
+                                    <div class="carousel-track-container">
+                                        <div class="carousel-track">
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/OpenGL/3D Cubes/rotating cube.gif"
+                                                    alt="Rotating Cube">
+                                                <figcaption>Cube en rotation</figcaption>
+                                            </figure>
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/OpenGL/3D Cubes/Camera and textured cubes.gif"
+                                                    alt="Camera and Textured Cubes">
+                                                <figcaption>Caméra et cubes texturés</figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                    <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide"><svg
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path d="M15 18l-6-6 6-6" />
+                                        </svg></button>
+                                    <button class="carousel-btn carousel-btn--next" aria-label="Next slide"><svg
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path d="M9 18l6-6-6-6" />
+                                        </svg></button>
+                                    <div class="carousel-indicators"></div>
                                 </div>
                             </div>
-                            <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide"><svg
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path d="M15 18l-6-6 6-6" />
-                                </svg></button>
-                            <button class="carousel-btn carousel-btn--next" aria-label="Next slide"><svg
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path d="M9 18l6-6-6-6" />
-                                </svg></button>
-                            <div class="carousel-indicators"></div>
-                        </div>
-                        <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--color-text-primary);">Shaders
-                        </h3>
-                        <div class="carousel" id="carousel-shaders">
-                            <div class="carousel-track-container">
-                                <div class="carousel-track">
-                                    <figure class="carousel-slide">
-                                        <img src="../Gifs & Pics/OpenGL/HSVtoRGB.gif" alt="HSV to RGB Shader">
-                                        <figcaption>Shader HSV vers RGB</figcaption>
-                                    </figure>
-                                    <figure class="carousel-slide">
-                                        <img src="../Gifs & Pics/OpenGL/RegularPoly.gif" alt="Regular Polygon Shader">
-                                        <figcaption>Polygones réguliers</figcaption>
-                                    </figure>
+
+                            <div>
+                                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);">
+                                    Shaders
+                                </h3>
+                                <div class="carousel" id="carousel-shaders">
+                                    <div class="carousel-track-container">
+                                        <div class="carousel-track">
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/OpenGL/HSVtoRGB.gif" alt="HSV to RGB Shader">
+                                                <figcaption>Shader HSV vers RGB</figcaption>
+                                            </figure>
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/OpenGL/RegularPoly.gif"
+                                                    alt="Regular Polygon Shader">
+                                                <figcaption>Polygones réguliers</figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                    <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide"><svg
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path d="M15 18l-6-6 6-6" />
+                                        </svg></button>
+                                    <button class="carousel-btn carousel-btn--next" aria-label="Next slide"><svg
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path d="M9 18l6-6-6-6" />
+                                        </svg></button>
+                                    <div class="carousel-indicators"></div>
                                 </div>
                             </div>
-                            <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide"><svg
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path d="M15 18l-6-6 6-6" />
-                                </svg></button>
-                            <button class="carousel-btn carousel-btn--next" aria-label="Next slide"><svg
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path d="M9 18l6-6-6-6" />
-                                </svg></button>
-                            <div class="carousel-indicators"></div>
-                        </div>
-                        <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--color-text-primary);">Formes</h3>
-                        <div class="carousel" id="carousel-shapes">
-                            <div class="carousel-track-container">
-                                <div class="carousel-track">
-                                    <figure class="carousel-slide">
-                                        <img src="../Gifs & Pics/OpenGL/Shapes/Shape_1.gif" alt="Shape 1">
-                                        <figcaption>Forme 1</figcaption>
-                                    </figure>
-                                    <figure class="carousel-slide">
-                                        <img src="../Gifs & Pics/OpenGL/Shapes/Shape_2.gif" alt="Shape 2">
-                                        <figcaption>Forme 2</figcaption>
-                                    </figure>
-                                    <figure class="carousel-slide">
-                                        <img src="../Gifs & Pics/OpenGL/Shapes/Shape_3.gif" alt="Shape 3">
-                                        <figcaption>Forme 3</figcaption>
-                                    </figure>
+
+                            <div>
+                                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);">Formes
+                                </h3>
+                                <div class="carousel" id="carousel-shapes">
+                                    <div class="carousel-track-container">
+                                        <div class="carousel-track">
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/OpenGL/Shapes/Shape_1.gif" alt="Shape 1">
+                                                <figcaption>Forme 1</figcaption>
+                                            </figure>
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/OpenGL/Shapes/Shape_2.gif" alt="Shape 2">
+                                                <figcaption>Forme 2</figcaption>
+                                            </figure>
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/OpenGL/Shapes/Shape_3.gif" alt="Shape 3">
+                                                <figcaption>Forme 3</figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                    <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide"><svg
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path d="M15 18l-6-6 6-6" />
+                                        </svg></button>
+                                    <button class="carousel-btn carousel-btn--next" aria-label="Next slide"><svg
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path d="M9 18l6-6-6-6" />
+                                        </svg></button>
+                                    <div class="carousel-indicators"></div>
                                 </div>
                             </div>
-                            <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide"><svg
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path d="M15 18l-6-6 6-6" />
-                                </svg></button>
-                            <button class="carousel-btn carousel-btn--next" aria-label="Next slide"><svg
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path d="M9 18l6-6-6-6" />
-                                </svg></button>
-                            <div class="carousel-indicators"></div>
                         </div>
                     </div>
 
@@ -163,8 +179,8 @@
                                 <dd>C#, GLSL</dd>
                                 <dt>Logiciel</dt>
                                 <dd>Visual Studio 2019</dd>
-                                <dt>Statut</dt>
-                                <dd>En cours</dd>
+                                <dt>Durée</dt>
+                                <dd>Avril - Mai 2023</dd>
                             </dl>
                         </div>
 

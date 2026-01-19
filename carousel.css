@@ -19,7 +19,6 @@
 .carousel-track {
     display: flex;
     transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-    will-change: transform;
 }
 
 .carousel-slide {
@@ -36,11 +35,9 @@
 }
 
 .carousel-slide img {
-    max-width: 100%;
-    max-height: 70vh;
-    width: auto;
-    height: auto;
-    object-fit: contain;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
     border-radius: var(--radius-md);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
