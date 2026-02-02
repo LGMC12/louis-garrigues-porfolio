@@ -84,7 +84,7 @@ Write-Host "=== Creating Thumbnails for Main Page (800x450) ===" -ForegroundColo
 $thumbnails = @(
     @{ Src = "Gifs & Pics/Solar Leap/AFFICHE_CRITERIUM_A0_PAYSAGE.jpg"; Dest = "optimized/thumbnails/solar-leap.jpg" },
     @{ Src = "Gifs & Pics/A Wobbly Alchemy/Level Art/AWA_Room.png"; Dest = "optimized/thumbnails/woobly-alchemy.jpg" },
-    @{ Src = "Gifs & Pics/The Last Train/TLT_Title.png"; Dest = "optimized/thumbnails/iron-express.jpg" },
+    @{ Src = "Gifs & Pics/Iron Express/TLT_Title.png"; Dest = "optimized/thumbnails/iron-express.jpg" },
     @{ Src = "Gifs & Pics/Miw's Legacy/ML_Title.png"; Dest = "optimized/thumbnails/miws-legacy.jpg" },
     @{ Src = "Gifs & Pics/Magic Slimes/MS_screen.png"; Dest = "optimized/thumbnails/magic-slimes.jpg" },
     @{ Src = "Gifs & Pics/Sokochess/Screen.png"; Dest = "optimized/thumbnails/sokochess.jpg" }
