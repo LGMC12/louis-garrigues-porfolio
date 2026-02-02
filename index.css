@@ -925,9 +925,48 @@ img {
     gap: var(--spacing-xl);
 }
 
+/* Sidebar */
+.project-sidebar {
+    /* Mobile: Order 2 (After Description, before others) */
+    order: 2;
+    position: relative;
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Mobile: Unwrap Main to allow Sidebar injection */
+@media (max-width: 1023px) {
+    .project-main {
+        display: contents;
+    }
+
+    /* Force Description to remain first */
+    .project-main>.project-section:first-child {
+        order: 1;
+    }
+
+    /* Force everything else to come after Sidebar */
+    .project-main>*:not(:first-child) {
+        order: 3;
+    }
+}
+
 @media (min-width: 1024px) {
     .project-grid {
         grid-template-columns: minmax(0, 1fr) 320px;
+    }
+
+    /* Desktop: Restore container behavior */
+    .project-main {
+        display: block;
+    }
+
+    .project-sidebar {
+        /* Desktop: Show second (right column) */
+        order: 0;
+        margin-bottom: 0;
+        position: sticky;
+        top: calc(var(--nav-height) + var(--spacing-xl));
+        height: fit-content;
     }
 }
 
@@ -1007,9 +1046,8 @@ img {
     color: var(--color-text-secondary);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
-    flex-wrap: wrap;
     align-items: baseline;
-    gap: var(--spacing-xs);
+    gap: 0.5rem;
 }
 
 .team-list-item:last-child {

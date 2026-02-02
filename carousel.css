@@ -45,7 +45,7 @@
 
 .carousel-portrait {
     --carousel-ratio: 9 / 16;
-    max-width: 400px;
+    max-width: 250px;
     margin-inline: auto;
 }
 
@@ -141,4 +141,111 @@
     .carousel-slide img {
         max-height: 50vh;
     }
+}
+
+/* ========================================
+   Carousel Layout Helpers
+   ======================================== */
+.carousel-row-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    /* justify-content: center; Removed to align with left page content */
+    gap: 1.5rem;
+    margin-top: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+    .carousel-row-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.carousel-col {
+    width: 100%;
+    /* Remove fixed max-width to allow grid to control sizing */
+    /* max-width: 250px; Remove this so it fills the grid cell */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Left align title and carousel */
+    height: 100%;
+    /* Ensure column stretches to full grid row height */
+}
+
+/* Align title to start of the column (which matches carousel start) */
+.carousel-col h3 {
+    text-align: left;
+    width: 100%;
+}
+
+/* Ensure portrait carousel inside column fills the column but respects max width */
+.carousel-col .carousel-portrait {
+    width: 100%;
+    max-width: 250px;
+    /* Enforce the small size here explicitly */
+    margin: 0;
+    margin-top: auto;
+    /* Push carousel to the bottom of the flexible column */
+}
+
+/* ========================================
+   Lightbox Styles
+   ======================================== */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    /* Darker background */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    /* Higher z-index */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-base);
+}
+
+.lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox img {
+    /* "VERY BIGGER" - allow full scaling */
+    width: auto;
+    height: 85vh;
+    /* Force height to be large (upscaling small images) */
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: var(--radius-md);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    transform: scale(0.95);
+    transition: transform var(--transition-base);
+    object-fit: contain;
+}
+
+/* Force portrait images to be even bigger if possible? 
+   Actually, max-height 95vh is the physical limit of the screen.
+   Maybe the user wants to scroll? 
+   No, usually lightbox is fit-to-screen. 
+   I'll stick to 95vh but ensure no other constraints. */
+
+.lightbox.active img {
+    transform: scale(1);
+}
+
+/* Make carousel images clickable */
+.carousel-slide img {
+    cursor: zoom-in;
+    transition: transform var(--transition-fast);
+}
+
+.carousel-slide img:hover {
+    transform: scale(1.02);
 }
