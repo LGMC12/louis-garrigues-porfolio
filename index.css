@@ -548,7 +548,8 @@ img {
 }
 
 .project-card:hover .project-img {
-    /* Hover effect can be re-enabled later if desired */
+    /* Hover effect disabled for performance */
+    transform: none;
 }
 
 .project-placeholder {
@@ -569,6 +570,7 @@ img {
 
 .project-card:hover .project-icon {
     /* Transform removed for GPU performance */
+    transform: scale(1);
 }
 
 /* Project overlay - DISABLED for GPU performance */
@@ -576,16 +578,8 @@ img {
     display: none;
 }
 
-.project-card:hover .project-overlay {
-    /* Kept disabled */
-}
-
 .project-view {
     display: none;
-}
-
-.project-card:hover .project-view {
-    /* Kept disabled */
 }
 
 .project-content {
@@ -612,6 +606,7 @@ img {
     margin-bottom: var(--spacing-sm);
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
