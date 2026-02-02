@@ -993,27 +993,32 @@ img {
     font-weight: 600;
 }
 
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: var(--spacing-sm);
+.team-list {
+    list-style: none;
+    margin-bottom: var(--spacing-lg);
 }
 
-.team-member {
-    padding: var(--spacing-sm);
-    background: var(--color-bg-card);
-    border-radius: var(--radius-sm);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+.team-list-item {
+    padding: var(--spacing-xs) 0;
+    color: var(--color-text-secondary);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--spacing-xs);
 }
 
-.team-member strong {
-    display: block;
+.team-list-item:last-child {
+    border-bottom: none;
+}
+
+.team-list-item strong {
     color: var(--color-text-primary);
-    margin-bottom: 0.25rem;
+    font-weight: 600;
 }
 
-.team-member span {
-    font-size: 0.8125rem;
+.team-list-item span {
+    font-size: 0.9375rem;
     color: var(--color-text-muted);
 }
 
