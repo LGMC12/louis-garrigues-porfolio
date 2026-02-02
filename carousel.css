@@ -36,10 +36,17 @@
 
 .carousel-slide img {
     width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
+    aspect-ratio: var(--carousel-ratio, 16 / 9);
+    object-fit: contain;
+    background: transparent;
     border-radius: var(--radius-md);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-portrait {
+    --carousel-ratio: 9 / 16;
+    max-width: 400px;
+    margin-inline: auto;
 }
 
 .carousel-slide figcaption {
