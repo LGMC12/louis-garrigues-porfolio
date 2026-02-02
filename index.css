@@ -921,13 +921,13 @@ img {
 
 .project-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--spacing-xl);
 }
 
 @media (min-width: 1024px) {
     .project-grid {
-        grid-template-columns: 1fr 320px;
+        grid-template-columns: minmax(0, 1fr) 320px;
     }
 }
 
@@ -996,6 +996,10 @@ img {
 .team-list {
     list-style: none;
     margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: var(--color-bg-card);
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .team-list-item {
@@ -1174,6 +1178,7 @@ img {
     text-align: center;
 }
 
+
 .footer p {
     color: var(--color-text-muted);
     font-size: 0.875rem;
@@ -1217,6 +1222,26 @@ img {
 @media (max-width: 767px) {
     :root {
         --nav-height: 70px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+    }
+
+    /* Fix Hero Content Overflow */
+    .project-hero-content {
+        width: 90%;
+        max-width: 100%;
+        padding: var(--spacing-sm);
+    }
+
+    .project-hero-title {
+        font-size: 2rem;
     }
 
     .nav-toggle {
