@@ -23,6 +23,15 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#hero" class="nav-logo">Louis Garrigues</a>
+            <div class="nav-search">
+                <svg class="nav-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+                </svg>
+                <input type="text" id="filter-input" class="nav-search-input" placeholder="Unity, VFX, Shaders…" readonly>
+                <button class="filter-clear" id="filter-clear" aria-label="Effacer">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                </button>
+            </div>
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
                 <span class="hamburger"></span>
             </button>
@@ -33,6 +42,60 @@
             </ul>
         </div>
     </nav>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay" aria-hidden="true">
+        <div class="search-overlay-panel">
+            <div class="container">
+                <div class="search-overlay-bar">
+                    <svg class="search-overlay-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+                    </svg>
+                    <input type="text" id="overlay-input" class="search-overlay-input" placeholder="Rechercher par technologie, rôle…" autocomplete="off" spellcheck="false">
+                    <button class="search-overlay-close" id="search-overlay-close" aria-label="Fermer">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                        <span>Esc</span>
+                    </button>
+                </div>
+                <div class="search-overlay-groups">
+                    <div class="search-overlay-group">
+                        <p class="search-overlay-group-label">Moteur</p>
+                        <div class="search-overlay-tags">
+                            <button class="overlay-tag" data-tag="unity">Unity</button>
+                            <button class="overlay-tag" data-tag="unreal">Unreal</button>
+                            <button class="overlay-tag" data-tag="godot">Godot</button>
+                        </div>
+                    </div>
+                    <div class="search-overlay-group">
+                        <p class="search-overlay-group-label">Compétences</p>
+                        <div class="search-overlay-tags">
+                            <button class="overlay-tag" data-tag="vfx">VFX</button>
+                            <button class="overlay-tag" data-tag="tech art">Tech Art</button>
+                            <button class="overlay-tag" data-tag="gameplay programming">Gameplay Programming</button>
+                            <button class="overlay-tag" data-tag="gamefeel">Gamefeel</button>
+                            <button class="overlay-tag" data-tag="ui">UI</button>
+                            <button class="overlay-tag" data-tag="game design">Game Design</button>
+                            <button class="overlay-tag" data-tag="level design">Level Design</button>
+                            <button class="overlay-tag" data-tag="game art">Game Art</button>
+                            <button class="overlay-tag" data-tag="shaders">Shaders</button>
+                            <button class="overlay-tag" data-tag="programming">Programming</button>
+                            <button class="overlay-tag" data-tag="mathématiques">Mathématiques</button>
+                            <button class="overlay-tag" data-tag="algorithmie">Algorithmie</button>
+                            <button class="overlay-tag" data-tag="rnd">R&D</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-overlay-footer">
+                    <button class="overlay-clear-all" id="overlay-clear-all">Effacer les filtres</button>
+                    <button class="overlay-apply" id="overlay-apply">
+                        <span id="overlay-apply-label">Voir les projets</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="search-overlay-backdrop" id="search-overlay-backdrop"></div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
@@ -65,9 +128,31 @@
             <h2 class="section-title reveal">Portfolio</h2>
             <p class="section-subtitle reveal">Mes projets étudiants et personnels</p>
 
+            <!-- Filter Tags -->
+            <div class="projects-filter reveal">
+                <div class="filter-tags">
+                    <button class="filter-tag" data-tag="unity">Unity</button>
+                    <button class="filter-tag" data-tag="unreal">Unreal</button>
+                    <button class="filter-tag" data-tag="godot">Godot</button>
+                    <button class="filter-tag" data-tag="vfx">VFX</button>
+                    <button class="filter-tag" data-tag="tech art">Tech Art</button>
+                    <button class="filter-tag" data-tag="gameplay programming">Gameplay Programming</button>
+                    <button class="filter-tag" data-tag="gamefeel">Gamefeel</button>
+                    <button class="filter-tag" data-tag="ui">UI</button>
+                    <button class="filter-tag" data-tag="game design">Game Design</button>
+                    <button class="filter-tag" data-tag="level design">Level Design</button>
+                    <button class="filter-tag" data-tag="game art">Game Art</button>
+                    <button class="filter-tag" data-tag="shaders">Shaders</button>
+                    <button class="filter-tag" data-tag="programming">Programming</button>
+                    <button class="filter-tag" data-tag="mathématiques">Mathématiques</button>
+                    <button class="filter-tag" data-tag="algorithmie">Algorithmie</button>
+                    <button class="filter-tag" data-tag="rnd">R&D</button>
+                </div>
+            </div>
+
             <div class="projects-grid">
                 <!-- Solar Leap -->
-                <a href="projects/solar-leap.html" class="project-card reveal">
+                <a href="projects/solar-leap.html" class="project-card reveal" data-tags="unity,gameplay programming,tech art,vfx,gamefeel,ui">
                     <div class="project-image">
                         <img src="optimized/thumbnails/solar-leap.jpg" alt="Solar Leap" class="project-img"
                             loading="lazy" decoding="async">
@@ -82,7 +167,7 @@
                             Hélio, un robot jardinier accompagné de Lucy la graine de tournesol.</p>
                         <div class="project-tags">
                             <span class="tag">Gameplay Programming</span>
-                            <span class="tag">Technical Art</span>
+                            <span class="tag">Tech Art</span>
                             <span class="tag">VFX</span>
                             <span class="tag">UI</span>
                         </div>
@@ -91,7 +176,7 @@
                 </a>
 
                 <!-- A Woobly Alchemy -->
-                <a href="projects/woobly-alchemy.html" class="project-card reveal">
+                <a href="projects/woobly-alchemy.html" class="project-card reveal" data-tags="unreal,vfx,game art,game design">
                     <div class="project-image">
                         <img src="optimized/thumbnails/woobly-alchemy.jpg" alt="A Woobly Alchemy" class="project-img"
                             loading="lazy" decoding="async">
@@ -109,12 +194,12 @@
                             <span class="tag">Game Art</span>
                             <span class="tag">Game Design</span>
                         </div>
-                        <p class="project-team">Équipe de 4 • 3 jours (Game Jam)</p>
+                        <p class="project-team">Équipe de 4 • 3 jours</p>
                     </div>
                 </a>
 
                 <!-- Iron Express -->
-                <a href="projects/iron-express.html" class="project-card reveal">
+                <a href="projects/iron-express.html" class="project-card reveal" data-tags="unity,vfx,gamefeel,gameplay programming,ui">
                     <div class="project-image">
                         <img src="optimized/thumbnails/iron-express.jpg" alt="Iron Express" class="project-img"
                             loading="lazy" decoding="async">
@@ -129,15 +214,15 @@
                             Survivez lors de votre périple en train en gérant vos ressources.</p>
                         <div class="project-tags">
                             <span class="tag">VFX</span>
+                            <span class="tag">Gamefeel</span>
                             <span class="tag">Gameplay Programming</span>
-                            <span class="tag">Game Design</span>
                         </div>
                         <p class="project-team">Équipe de 8 • Avril - Juin 2023</p>
                     </div>
                 </a>
 
                 <!-- Miw's Legacy -->
-                <a href="projects/miws-legacy.html" class="project-card reveal">
+                <a href="projects/miws-legacy.html" class="project-card reveal" data-tags="unity,gameplay programming,ui,vfx,gamefeel,game design">
                     <div class="project-image">
                         <img src="optimized/thumbnails/miws-legacy.jpg" alt="Miw's Legacy" class="project-img"
                             loading="lazy" decoding="async">
@@ -151,8 +236,8 @@
                         <p class="project-summary">Platformer 2D en Égypte antique. Incarnez Miw, fils de la déesse
                             Bastet, dans une quête pour ressusciter sa mère.</p>
                         <div class="project-tags">
-                            <span class="tag">Game Design</span>
                             <span class="tag">Gameplay Programming</span>
+                            <span class="tag">Gamefeel</span>
                             <span class="tag">UI</span>
                         </div>
                         <p class="project-team">Équipe de 12 • Janvier - Mars 2023</p>
@@ -160,7 +245,7 @@
                 </a>
 
                 <!-- Magic Slimes -->
-                <a href="projects/magic-slimes.html" class="project-card reveal">
+                <a href="projects/magic-slimes.html" class="project-card reveal" data-tags="unity,gameplay programming,vfx,gamefeel,game art,level design,ui">
                     <div class="project-image">
                         <img src="optimized/thumbnails/magic-slimes.jpg" alt="Magic Slimes" class="project-img"
                             loading="lazy" decoding="async">
@@ -175,15 +260,15 @@
                             guider les Slimes à travers 5 niveaux.</p>
                         <div class="project-tags">
                             <span class="tag">Gameplay Programming</span>
-                            <span class="tag">Game Art</span>
-                            <span class="tag">Level Design</span>
+                            <span class="tag">VFX</span>
+                            <span class="tag">Gamefeel</span>
                         </div>
                         <p class="project-team">Projet solo • Nov - Déc 2022</p>
                     </div>
                 </a>
 
                 <!-- OpenGL Learning -->
-                <a href="projects/opengl.html" class="project-card reveal">
+                <a href="projects/opengl.html" class="project-card reveal" data-tags="programming,shaders,mathématiques,algorithmie,rnd">
                     <div class="project-image">
                         <img src="Gifs & Pics/OpenGL/3D Cubes/Camera and textured cubes.gif" alt="OpenGL"
                             class="project-img" loading="lazy" decoding="async">
@@ -197,16 +282,16 @@
                         <p class="project-summary">Apprentissage autonome d'OpenGL avec OpenTK. Exploration des
                             fondamentaux du rendu graphique et des shaders.</p>
                         <div class="project-tags">
-                            <span class="tag">Programming</span>
+                            <span class="tag">R&D</span>
                             <span class="tag">Shaders</span>
                             <span class="tag">Mathématiques</span>
                         </div>
-                        <p class="project-team">Projet personnel • En cours</p>
+                        <p class="project-team">Projet personnel • 2 mois</p>
                     </div>
                 </a>
 
                 <!-- SokoChess -->
-                <a href="projects/sokochess.html" class="project-card reveal">
+                <a href="projects/sokochess.html" class="project-card reveal" data-tags="godot,gameplay programming,game design,gamefeel,level design,ui">
                     <div class="project-image">
                         <img src="optimized/thumbnails/sokochess.jpg" alt="SokoChess" class="project-img" loading="lazy"
                             decoding="async">
@@ -222,13 +307,18 @@
                         <div class="project-tags">
                             <span class="tag">Gameplay Programming</span>
                             <span class="tag">Game Design</span>
-                            <span class="tag">Level Design</span>
+                            <span class="tag">Gamefeel</span>
                         </div>
                         <p class="project-team">Équipe • Février - Mars 2022</p>
                     </div>
                 </a>
 
 
+            </div>
+
+            <div class="projects-no-results" id="projects-no-results">
+                <p>Aucun projet ne correspond à votre recherche.</p>
+                <button class="btn-reset" id="filter-reset">Tout afficher</button>
             </div>
         </div>
     </section>
@@ -244,13 +334,12 @@
                         gameplay à <strong>ISART DIGITAL</strong>.
                     </p>
                     <p>
-                        Passionné par les jeux vidéo et la programmation depuis plusieurs années, j'ai découvert
-                        récemment la conception et la réalisation d'effets visuels que je trouve passionnant, et c'est
+                        Aimant par les jeux vidéo et la programmation depuis plusieurs années, j'ai découvert
+                        récemment la conception et la réalisation d'effets visuels que je trouve très passionnant, et c'est
                         pourquoi j'aimerais en faire mon métier !
                     </p>
                     <p>
-                        Sur ce site, vous trouverez mes projets étudiants et personnels, parfois réalisés lors de game
-                        jams.
+                        Sur ce site, vous pourrez trouver mes projets étudiants et personnels.
                     </p>
                 </div>
                 <div class="about-skills reveal">
@@ -302,6 +391,19 @@
                 Si vous souhaitez en savoir plus à mon propos ou sur mes travaux, n'hésitez pas à me contacter !
             </p>
             <div class="contact-links">
+                <a href="mailto:louis.garrigues.lg12@gmail.com" class="contact-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <span>louis.garrigues.lg12@gmail.com</span>
+                </a>
+                <a href="tel:+33627465368" class="contact-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    <span>06 27 46 53 68</span>
+                </a>
                 <a href="https://www.linkedin.com/in/louis-garrigues-346a4124b/" target="_blank" class="contact-link">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                         <path

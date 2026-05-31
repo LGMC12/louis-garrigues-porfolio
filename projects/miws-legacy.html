@@ -20,6 +20,15 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="../index.html" class="nav-logo">Louis Garrigues</a>
+            <div class="nav-search">
+                <svg class="nav-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+                </svg>
+                <input type="text" id="filter-input" class="nav-search-input" placeholder="Unity, VFX, Shaders…" readonly>
+                <button class="filter-clear" id="filter-clear" aria-label="Effacer">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                </button>
+            </div>
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
                 <span class="hamburger"></span>
             </button>
@@ -30,6 +39,60 @@
             </ul>
         </div>
     </nav>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay" aria-hidden="true">
+        <div class="search-overlay-panel">
+            <div class="container">
+                <div class="search-overlay-bar">
+                    <svg class="search-overlay-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+                    </svg>
+                    <input type="text" id="overlay-input" class="search-overlay-input" placeholder="Rechercher par technologie, rôle…" autocomplete="off" spellcheck="false">
+                    <button class="search-overlay-close" id="search-overlay-close" aria-label="Fermer">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                        <span>Esc</span>
+                    </button>
+                </div>
+                <div class="search-overlay-groups">
+                    <div class="search-overlay-group">
+                        <p class="search-overlay-group-label">Moteur</p>
+                        <div class="search-overlay-tags">
+                            <button class="overlay-tag" data-tag="unity">Unity</button>
+                            <button class="overlay-tag" data-tag="unreal">Unreal</button>
+                            <button class="overlay-tag" data-tag="godot">Godot</button>
+                        </div>
+                    </div>
+                    <div class="search-overlay-group">
+                        <p class="search-overlay-group-label">Compétences</p>
+                        <div class="search-overlay-tags">
+                            <button class="overlay-tag" data-tag="vfx">VFX</button>
+                            <button class="overlay-tag" data-tag="tech art">Tech Art</button>
+                            <button class="overlay-tag" data-tag="gameplay programming">Gameplay Programming</button>
+                            <button class="overlay-tag" data-tag="gamefeel">Gamefeel</button>
+                            <button class="overlay-tag" data-tag="ui">UI</button>
+                            <button class="overlay-tag" data-tag="game design">Game Design</button>
+                            <button class="overlay-tag" data-tag="level design">Level Design</button>
+                            <button class="overlay-tag" data-tag="game art">Game Art</button>
+                            <button class="overlay-tag" data-tag="shaders">Shaders</button>
+                            <button class="overlay-tag" data-tag="programming">Programming</button>
+                            <button class="overlay-tag" data-tag="mathématiques">Mathématiques</button>
+                            <button class="overlay-tag" data-tag="algorithmie">Algorithmie</button>
+                            <button class="overlay-tag" data-tag="rnd">R&D</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-overlay-footer">
+                    <button class="overlay-clear-all" id="overlay-clear-all">Effacer les filtres</button>
+                    <button class="overlay-apply" id="overlay-apply">
+                        <span id="overlay-apply-label">Voir les projets</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="search-overlay-backdrop" id="search-overlay-backdrop"></div>
+    </div>
 
     <section class="project-hero" style="background-image: url('../Gifs & Pics/Miw\'s Legacy/ML_Title.png');">
         <div class="hero-bg">
@@ -76,9 +139,9 @@
                     <div class="project-section project-media">
                         <h2>Mon travail</h2>
                         <ul class="work-list">
-                            <li>Juiciness dans le gameplay et dans les écrans</li>
+                            <li>Implémentation du gamefeel dans le gameplay et dans les écrans</li>
                             <li>Conception et intégration de l'UI du jeu</li>
-                            <li>Implémentation des collectibles et du système de score</li>
+                            <li>Programmation des collectibles et du système de score</li>
                             <li>Intégration d'assets 2D</li>
                         </ul>
                         <div class="carousel-grid">
@@ -117,9 +180,7 @@
                             </div>
 
                             <div>
-                                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);">
-                                    Juiciness
-                                </h3>
+                                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);">Gamefeel</h3>
                                 <div class="carousel" id="carousel-juiciness">
                                     <div class="carousel-track-container">
                                         <div class="carousel-track">
@@ -153,9 +214,7 @@
                             </div>
 
                             <div>
-                                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);">
-                                    Interface
-                                    Utilisateur</h3>
+                                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);">UI</h3>
                                 <div class="carousel" id="carousel-ui">
                                     <div class="carousel-track-container">
                                         <div class="carousel-track">
@@ -286,10 +345,11 @@
                     <div class="project-info-card">
                         <h3>Mon rôle</h3>
                         <div class="role-tags">
-                            <span class="tag tag--large">Game Design</span>
                             <span class="tag tag--large">Gameplay Programming</span>
-                            <span class="tag tag--large">UI Programming</span>
-                            <span class="tag tag--large">Juiciness</span>
+                            <span class="tag tag--large">UI</span>
+                            <span class="tag tag--large">VFX</span>
+                            <span class="tag tag--large">Gamefeel</span>
+                            <span class="tag tag--large">Game Design</span>
                         </div>
                     </div>
 

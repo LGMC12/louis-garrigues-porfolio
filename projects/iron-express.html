@@ -20,6 +20,15 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="../index.html" class="nav-logo">Louis Garrigues</a>
+            <div class="nav-search">
+                <svg class="nav-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+                </svg>
+                <input type="text" id="filter-input" class="nav-search-input" placeholder="Unity, VFX, Shaders…" readonly>
+                <button class="filter-clear" id="filter-clear" aria-label="Effacer">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                </button>
+            </div>
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
                 <span class="hamburger"></span>
             </button>
@@ -30,6 +39,60 @@
             </ul>
         </div>
     </nav>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay" aria-hidden="true">
+        <div class="search-overlay-panel">
+            <div class="container">
+                <div class="search-overlay-bar">
+                    <svg class="search-overlay-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+                    </svg>
+                    <input type="text" id="overlay-input" class="search-overlay-input" placeholder="Rechercher par technologie, rôle…" autocomplete="off" spellcheck="false">
+                    <button class="search-overlay-close" id="search-overlay-close" aria-label="Fermer">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                        <span>Esc</span>
+                    </button>
+                </div>
+                <div class="search-overlay-groups">
+                    <div class="search-overlay-group">
+                        <p class="search-overlay-group-label">Moteur</p>
+                        <div class="search-overlay-tags">
+                            <button class="overlay-tag" data-tag="unity">Unity</button>
+                            <button class="overlay-tag" data-tag="unreal">Unreal</button>
+                            <button class="overlay-tag" data-tag="godot">Godot</button>
+                        </div>
+                    </div>
+                    <div class="search-overlay-group">
+                        <p class="search-overlay-group-label">Compétences</p>
+                        <div class="search-overlay-tags">
+                            <button class="overlay-tag" data-tag="vfx">VFX</button>
+                            <button class="overlay-tag" data-tag="tech art">Tech Art</button>
+                            <button class="overlay-tag" data-tag="gameplay programming">Gameplay Programming</button>
+                            <button class="overlay-tag" data-tag="gamefeel">Gamefeel</button>
+                            <button class="overlay-tag" data-tag="ui">UI</button>
+                            <button class="overlay-tag" data-tag="game design">Game Design</button>
+                            <button class="overlay-tag" data-tag="level design">Level Design</button>
+                            <button class="overlay-tag" data-tag="game art">Game Art</button>
+                            <button class="overlay-tag" data-tag="shaders">Shaders</button>
+                            <button class="overlay-tag" data-tag="programming">Programming</button>
+                            <button class="overlay-tag" data-tag="mathématiques">Mathématiques</button>
+                            <button class="overlay-tag" data-tag="algorithmie">Algorithmie</button>
+                            <button class="overlay-tag" data-tag="rnd">R&D</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-overlay-footer">
+                    <button class="overlay-clear-all" id="overlay-clear-all">Effacer les filtres</button>
+                    <button class="overlay-apply" id="overlay-apply">
+                        <span id="overlay-apply-label">Voir les projets</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="search-overlay-backdrop" id="search-overlay-backdrop"></div>
+    </div>
 
     <section class="project-hero" style="background-image: url('../Gifs & Pics/Iron Express/TLT_Title.png');">
         <div class="hero-bg">
@@ -78,149 +141,115 @@
                             <li>Création de l'animation et des VFX du coffre</li>
                             <li>Implémentation et développement de la carte dans le jeu</li>
                         </ul>
-                        <div class="carousel-grid">
-                            <div class="carousel-row-3">
-                                <div class="carousel-col">
-                                    <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);">
-                                        VFX
-                                        Ennemis & Générateurs</h3>
-                                    <div class="carousel carousel-portrait" id="carousel-enemies">
-                                        <div class="carousel-track-container">
-                                            <div class="carousel-track">
-                                                <figure class="carousel-slide">
-                                                    <img src="../Gifs & Pics/Iron Express/VFX Enemies Generators/enemies explo.gif"
-                                                        alt="Enemies Explosion">
-                                                    <figcaption>Explosion des ennemis</figcaption>
-                                                </figure>
-                                                <figure class="carousel-slide">
-                                                    <img src="../Gifs & Pics/Iron Express/VFX Enemies Generators/Enemies shoot.gif"
-                                                        alt="Enemies Shoot">
-                                                    <figcaption>Tir des ennemis</figcaption>
-                                                </figure>
-                                                <figure class="carousel-slide">
-                                                    <img src="../Gifs & Pics/Iron Express/VFX Enemies Generators/Enemies damaged.gif"
-                                                        alt="Enemies Damaged">
-                                                    <figcaption>Dégâts des ennemis</figcaption>
-                                                </figure>
-                                                <figure class="carousel-slide">
-                                                    <img src="../Gifs & Pics/Iron Express/VFX Enemies Generators/generator explo.gif"
-                                                        alt="Generator Explosion">
-                                                    <figcaption>Explosion générateur</figcaption>
-                                                </figure>
-                                                <figure class="carousel-slide">
-                                                    <img src="../Gifs & Pics/Iron Express/VFX Enemies Generators/generator generate.gif"
-                                                        alt="Generator Generate">
-                                                    <figcaption>Génération d'énergie</figcaption>
-                                                </figure>
-                                            </div>
+                        <div class="carousel-row-2">
+                            <div class="carousel-col">
+                                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);">VFX Tourelles</h3>
+                                <div class="carousel carousel-portrait" id="carousel-turrets">
+                                    <div class="carousel-track-container">
+                                        <div class="carousel-track">
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/Iron Express/VFX Turret/turret 1 shoot.gif" alt="Turret 1 Shoot">
+                                                <figcaption>Tourelle 1 - Tir</figcaption>
+                                            </figure>
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/Iron Express/VFX Turret/turret 1 explo.gif" alt="Turret 1 Explosion">
+                                                <figcaption>Tourelle 1 - Explosion</figcaption>
+                                            </figure>
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/Iron Express/VFX Turret/turret 2 shoot.gif" alt="Turret 2 Shoot">
+                                                <figcaption>Tourelle 2 - Tir</figcaption>
+                                            </figure>
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/Iron Express/VFX Turret/turret 2 explo.gif" alt="Turret 2 Explosion">
+                                                <figcaption>Tourelle 2 - Explosion</figcaption>
+                                            </figure>
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/Iron Express/VFX Turret/turret 3 shoot.gif" alt="Turret 3 Shoot">
+                                                <figcaption>Tourelle 3 - Tir</figcaption>
+                                            </figure>
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/Iron Express/VFX Turret/turret 3 explo.gif" alt="Turret 3 Explosion">
+                                                <figcaption>Tourelle 3 - Explosion</figcaption>
+                                            </figure>
                                         </div>
-                                        <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide"><svg
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                                <path d="M15 18l-6-6 6-6" />
-                                            </svg></button>
-                                        <button class="carousel-btn carousel-btn--next" aria-label="Next slide"><svg
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                                <path d="M9 18l6-6-6-6" />
-                                            </svg></button>
-                                        <div class="carousel-indicators"></div>
                                     </div>
+                                    <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M15 18l-6-6 6-6" /></svg></button>
+                                    <button class="carousel-btn carousel-btn--next" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18l6-6-6-6" /></svg></button>
+                                    <div class="carousel-indicators"></div>
                                 </div>
+                            </div>
 
-                                <div class="carousel-col">
-                                    <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);">
-                                        VFX
-                                        Tourelles</h3>
-                                    <div class="carousel carousel-portrait" id="carousel-turrets">
-                                        <div class="carousel-track-container">
-                                            <div class="carousel-track">
-                                                <figure class="carousel-slide">
-                                                    <img src="../Gifs & Pics/Iron Express/VFX Turret/turret 1 shoot.gif"
-                                                        alt="Turret 1 Shoot">
-                                                    <figcaption>Tourelle 1 - Tir</figcaption>
-                                                </figure>
-                                                <figure class="carousel-slide">
-                                                    <img src="../Gifs & Pics/Iron Express/VFX Turret/turret 1 explo.gif"
-                                                        alt="Turret 1 Explosion">
-                                                    <figcaption>Tourelle 1 - Explosion</figcaption>
-                                                </figure>
-                                                <figure class="carousel-slide">
-                                                    <img src="../Gifs & Pics/Iron Express/VFX Turret/turret 2 shoot.gif"
-                                                        alt="Turret 2 Shoot">
-                                                    <figcaption>Tourelle 2 - Tir</figcaption>
-                                                </figure>
-                                                <figure class="carousel-slide">
-                                                    <img src="../Gifs & Pics/Iron Express/VFX Turret/turret 2 explo.gif"
-                                                        alt="Turret 2 Explosion">
-                                                    <figcaption>Tourelle 2 - Explosion</figcaption>
-                                                </figure>
-                                                <figure class="carousel-slide">
-                                                    <img src="../Gifs & Pics/Iron Express/VFX Turret/turret 3 shoot.gif"
-                                                        alt="Turret 3 Shoot">
-                                                    <figcaption>Tourelle 3 - Tir</figcaption>
-                                                </figure>
-                                                <figure class="carousel-slide">
-                                                    <img src="../Gifs & Pics/Iron Express/VFX Turret/turret 3 explo.gif"
-                                                        alt="Turret 3 Explosion">
-                                                    <figcaption>Tourelle 3 - Explosion</figcaption>
-                                                </figure>
-                                            </div>
+                            <div class="carousel-col">
+                                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);">VFX Ennemis</h3>
+                                <div class="carousel carousel-portrait" id="carousel-enemies">
+                                    <div class="carousel-track-container">
+                                        <div class="carousel-track">
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/Iron Express/VFX Enemies Generators/Enemies shoot.gif" alt="Enemies Shoot">
+                                                <figcaption>Tir des ennemis</figcaption>
+                                            </figure>
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/Iron Express/VFX Enemies Generators/enemies explo.gif" alt="Enemies Explosion">
+                                                <figcaption>Explosion des ennemis</figcaption>
+                                            </figure>
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/Iron Express/VFX Enemies Generators/Enemies damaged.gif" alt="Enemies Damaged">
+                                                <figcaption>Dégâts des ennemis</figcaption>
+                                            </figure>
                                         </div>
-                                        <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide"><svg
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                                <path d="M15 18l-6-6 6-6" />
-                                            </svg></button>
-                                        <button class="carousel-btn carousel-btn--next" aria-label="Next slide"><svg
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                                <path d="M9 18l6-6-6-6" />
-                                            </svg></button>
-                                        <div class="carousel-indicators"></div>
                                     </div>
+                                    <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M15 18l-6-6 6-6" /></svg></button>
+                                    <button class="carousel-btn carousel-btn--next" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18l6-6-6-6" /></svg></button>
+                                    <div class="carousel-indicators"></div>
                                 </div>
+                            </div>
 
-                                <div class="carousel-col">
-                                    <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);">
-                                        Carte
-                                        & Coffre</h3>
-                                    <div class="carousel carousel-portrait" id="carousel-map">
-                                        <div class="carousel-track-container">
-                                            <div class="carousel-track">
-                                                <figure class="carousel-slide">
-                                                    <img src="../Gifs & Pics/Iron Express/TLT_Title.png" alt="Title">
-                                                    <figcaption>Écran titre</figcaption>
-                                                </figure>
-                                                <figure class="carousel-slide">
-                                                    <img src="../Gifs & Pics/Iron Express/TLT_Fight.gif" alt="Fight">
-                                                    <figcaption>Combat</figcaption>
-                                                </figure>
-                                                <figure class="carousel-slide">
-                                                    <img src="../Gifs & Pics/Iron Express/UI Map/Map.png" alt="Map">
-                                                    <figcaption>Carte</figcaption>
-                                                </figure>
-                                                <figure class="carousel-slide">
-                                                    <img src="../Gifs & Pics/Iron Express/UI Map/Station.png"
-                                                        alt="Station">
-                                                    <figcaption>Station</figcaption>
-                                                </figure>
-                                                <figure class="carousel-slide">
-                                                    <img src="../Gifs & Pics/Iron Express/UI Map/SelectDest.gif"
-                                                        alt="Destination Selection">
-                                                    <figcaption>Sélection de destination</figcaption>
-                                                </figure>
-                                            </div>
+                            <div class="carousel-col">
+                                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);">Gameplay & Coffre</h3>
+                                <div class="carousel carousel-portrait" id="carousel-gameplay">
+                                    <div class="carousel-track-container">
+                                        <div class="carousel-track">
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/Iron Express/TLT_Fight.gif" alt="Fight">
+                                                <figcaption>Combat</figcaption>
+                                            </figure>
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/Iron Express/Chest.gif" alt="Chest">
+                                                <figcaption>Coffre</figcaption>
+                                            </figure>
                                         </div>
-                                        <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide"><svg
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                                <path d="M15 18l-6-6 6-6" />
-                                            </svg></button>
-                                        <button class="carousel-btn carousel-btn--next" aria-label="Next slide"><svg
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                                <path d="M9 18l6-6-6-6" />
-                                            </svg></button>
-                                        <div class="carousel-indicators"></div>
                                     </div>
-                                </div> <!-- End carousel-col (3rd) -->
-                            </div> <!-- End carousel-row-3 -->
-                        </div> <!-- End carousel-grid -->
+                                    <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M15 18l-6-6 6-6" /></svg></button>
+                                    <button class="carousel-btn carousel-btn--next" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18l6-6-6-6" /></svg></button>
+                                    <div class="carousel-indicators"></div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-col">
+                                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);">Carte</h3>
+                                <div class="carousel carousel-portrait" id="carousel-map">
+                                    <div class="carousel-track-container">
+                                        <div class="carousel-track">
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/Iron Express/UI Map/SelectDest.gif" alt="Destination Selection">
+                                                <figcaption>Sélection de destination</figcaption>
+                                            </figure>
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/Iron Express/UI Map/Map.png" alt="Map">
+                                                <figcaption>Carte</figcaption>
+                                            </figure>
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/Iron Express/UI Map/Station.png" alt="Station">
+                                                <figcaption>Station</figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                    <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M15 18l-6-6 6-6" /></svg></button>
+                                    <button class="carousel-btn carousel-btn--next" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18l6-6-6-6" /></svg></button>
+                                    <div class="carousel-indicators"></div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div> <!-- End project-section project-media -->
 
@@ -269,37 +298,37 @@
                             </li>
                         </ul>
                     </div>
-                </div> <!-- End project-media section -->
-            </div> <!-- End project-main -->
+                </div> <!-- End project-main -->
 
-            <aside class="project-sidebar">
-                <div class="project-info-card">
-                    <h3>Informations</h3>
-                    <dl class="info-list">
-                        <dt>Genre</dt>
-                        <dd>Tower Defense, Rogue Lite</dd>
-                        <dt>Plateforme</dt>
-                        <dd>Mobile (Free to Play)</dd>
-                        <dt>Moteur</dt>
-                        <dd>Unity</dd>
-                        <dt>Langage</dt>
-                        <dd>C#</dd>
-                        <dt>Durée</dt>
-                        <dd>Avril - Juin 2023</dd>
-                    </dl>
-                </div>
-
-                <div class="project-info-card">
-                    <h3>Mon rôle</h3>
-                    <div class="role-tags">
-                        <span class="tag tag--large">VFX</span>
-                        <span class="tag tag--large">Gameplay Programming</span>
-                        <span class="tag tag--large">Game Design</span>
+                <aside class="project-sidebar">
+                    <div class="project-info-card">
+                        <h3>Informations</h3>
+                        <dl class="info-list">
+                            <dt>Genre</dt>
+                            <dd>Tower Defense, Rogue Lite</dd>
+                            <dt>Plateforme</dt>
+                            <dd>Mobile (Free to Play)</dd>
+                            <dt>Moteur</dt>
+                            <dd>Unity</dd>
+                            <dt>Langage</dt>
+                            <dd>C#</dd>
+                            <dt>Durée</dt>
+                            <dd>Avril - Juin 2023</dd>
+                        </dl>
                     </div>
-                </div>
-            </aside>
-        </div> <!-- End project-grid -->
-        </div>
+
+                    <div class="project-info-card">
+                        <h3>Mon rôle</h3>
+                        <div class="role-tags">
+                            <span class="tag tag--large">VFX</span>
+                        <span class="tag tag--large">Gamefeel</span>
+                            <span class="tag tag--large">Gameplay Programming</span>
+                            <span class="tag tag--large">UI</span>
+                        </div>
+                    </div>
+                </aside>
+            </div> <!-- End project-grid -->
+        </div> <!-- End container -->
     </section>
 
     <footer class="footer">
