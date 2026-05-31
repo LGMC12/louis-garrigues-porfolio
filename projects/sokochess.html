@@ -24,18 +24,23 @@
                 <svg class="nav-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
                 </svg>
-                <input type="text" id="filter-input" class="nav-search-input" placeholder="Unity, VFX, Shaders…" readonly>
+                <input type="text" id="filter-input" class="nav-search-input" placeholder="Unity, VFX, Shaders…" data-placeholder-fr="Unity, VFX, Shaders…" data-placeholder-en="Unity, VFX, Shaders…" readonly>
                 <button class="filter-clear" id="filter-clear" aria-label="Effacer">
                     <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
                 </button>
             </div>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            </button>
+            <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">EN</button>
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
                 <span class="hamburger"></span>
             </button>
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="../index.html#projects" class="nav-link">Portfolio</a></li>
-                <li><a href="../index.html#about" class="nav-link">À Propos</a></li>
-                <li><a href="../index.html#contact" class="nav-link nav-link--cta">Contact</a></li>
+                <li><a href="../index.html#projects" class="nav-link" data-fr="Portfolio" data-en="Portfolio">Portfolio</a></li>
+                <li><a href="../index.html#about" class="nav-link" data-fr="À Propos" data-en="About">À Propos</a></li>
+                <li><a href="../index.html#contact" class="nav-link nav-link--cta" data-fr="Contact" data-en="Contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -48,7 +53,7 @@
                     <svg class="search-overlay-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
                     </svg>
-                    <input type="text" id="overlay-input" class="search-overlay-input" placeholder="Rechercher par technologie, rôle…" autocomplete="off" spellcheck="false">
+                    <input type="text" id="overlay-input" class="search-overlay-input" placeholder="Rechercher par technologie, rôle…" data-placeholder-fr="Rechercher par technologie, rôle…" data-placeholder-en="Search by technology, role…" autocomplete="off" spellcheck="false">
                     <button class="search-overlay-close" id="search-overlay-close" aria-label="Fermer">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
                         <span>Esc</span>
@@ -56,7 +61,7 @@
                 </div>
                 <div class="search-overlay-groups">
                     <div class="search-overlay-group">
-                        <p class="search-overlay-group-label">Moteur</p>
+                        <p class="search-overlay-group-label" data-fr="Moteur" data-en="Engine">Moteur</p>
                         <div class="search-overlay-tags">
                             <button class="overlay-tag" data-tag="unity">Unity</button>
                             <button class="overlay-tag" data-tag="unreal">Unreal</button>
@@ -64,7 +69,7 @@
                         </div>
                     </div>
                     <div class="search-overlay-group">
-                        <p class="search-overlay-group-label">Compétences</p>
+                        <p class="search-overlay-group-label" data-fr="Compétences" data-en="Skills">Compétences</p>
                         <div class="search-overlay-tags">
                             <button class="overlay-tag" data-tag="vfx">VFX</button>
                             <button class="overlay-tag" data-tag="tech art">Tech Art</button>
@@ -76,16 +81,16 @@
                             <button class="overlay-tag" data-tag="game art">Game Art</button>
                             <button class="overlay-tag" data-tag="shaders">Shaders</button>
                             <button class="overlay-tag" data-tag="programming">Programming</button>
-                            <button class="overlay-tag" data-tag="mathématiques">Mathématiques</button>
-                            <button class="overlay-tag" data-tag="algorithmie">Algorithmie</button>
+                            <button class="overlay-tag" data-tag="mathématiques" data-fr="Mathématiques" data-en="Mathematics">Mathématiques</button>
+                            <button class="overlay-tag" data-tag="algorithmie" data-fr="Algorithmie" data-en="Algorithms">Algorithmie</button>
                             <button class="overlay-tag" data-tag="rnd">R&D</button>
                         </div>
                     </div>
                 </div>
                 <div class="search-overlay-footer">
-                    <button class="overlay-clear-all" id="overlay-clear-all">Effacer les filtres</button>
+                    <button class="overlay-clear-all" id="overlay-clear-all" data-fr="Effacer les filtres" data-en="Clear filters">Effacer les filtres</button>
                     <button class="overlay-apply" id="overlay-apply">
-                        <span id="overlay-apply-label">Voir les projets</span>
+                        <span id="overlay-apply-label" data-fr="Voir les projets" data-en="View projects">Voir les projets</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                     </button>
                 </div>
@@ -103,8 +108,8 @@
             <div class="project-hero-content">
 
                 <h1 class="project-hero-title">SokoChess</h1>
-                <p class="project-hero-meta">Sokoban Puzzle • Godot / C#</p>
-                <p class="project-hero-team">Réalisé en équipe • Février - Mars 2022</p>
+                <p class="project-hero-meta" data-fr="Sokoban Puzzle • Godot / C#" data-en="Sokoban Puzzle • Godot / C#">Sokoban Puzzle • Godot / C#</p>
+                <p class="project-hero-team" data-fr="Réalisé en équipe • Février - Mars 2022" data-en="Made as a team • February - March 2022">Réalisé en équipe • Février - Mars 2022</p>
             </div>
         </div>
     </section>
@@ -114,15 +119,15 @@
             <div class="project-grid">
                 <div class="project-main">
                     <div class="project-section">
-                        <h2>Description</h2>
-                        <p>SokoChess est un puzzle game mélangeant les mécaniques de Sokoban avec les règles des échecs.
+                        <h2 data-fr="Description" data-en="Description">Description</h2>
+                        <p data-fr="SokoChess est un puzzle game mélangeant les mécaniques de Sokoban avec les règles des échecs." data-en="SokoChess is a puzzle game blending Sokoban mechanics with the rules of chess.">SokoChess est un puzzle game mélangeant les mécaniques de Sokoban avec les règles des échecs.
                         </p>
-                        <p>Le joueur doit résoudre des puzzles en déplaçant des pièces d'échecs selon leurs règles de
+                        <p data-fr="Le joueur doit résoudre des puzzles en déplaçant des pièces d'échecs selon leurs règles de mouvement traditionnelles, tout en respectant les contraintes du Sokoban." data-en="The player must solve puzzles by moving chess pieces according to their traditional movement rules, while respecting Sokoban constraints.">Le joueur doit résoudre des puzzles en déplaçant des pièces d'échecs selon leurs règles de
                             mouvement traditionnelles, tout en respectant les contraintes du Sokoban.</p>
                     </div>
 
                     <div class="project-section">
-                        <h2>Vidéo</h2>
+                        <h2 data-fr="Vidéo" data-en="Video">Vidéo</h2>
                         <div class="video-container">
                             <iframe src="https://www.youtube.com/embed/stZLnE6Vg4g" title="SokoChess Gameplay"
                                 allowfullscreen></iframe>
@@ -130,22 +135,21 @@
                     </div>
 
                     <div class="project-section project-media">
-                        <h2>Mon travail</h2>
+                        <h2 data-fr="Mon travail" data-en="My work">Mon travail</h2>
                         <ul class="work-list">
-                            <li>Programmation du gameplay et du gamefeel</li>
-                            <li>Conception du jeu et de niveaux</li>
-                            <li>Implémentation de l'UI</li>
+                            <li data-fr="Programmation du gameplay et du gamefeel" data-en="Gameplay and gamefeel programming">Programmation du gameplay et du gamefeel</li>
+                            <li data-fr="Conception du jeu et de niveaux" data-en="Game and level design">Conception du jeu et de niveaux</li>
+                            <li data-fr="Implémentation de l'UI" data-en="UI implementation">Implémentation de l'UI</li>
                         </ul>
                         <div class="carousel-grid">
                             <div>
-                                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);">Aperçu
-                                </h3>
+                                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);" data-fr="Aperçu" data-en="Overview">Aperçu</h3>
                                 <div class="carousel" id="carousel-gameplay">
                                     <div class="carousel-track-container">
                                         <div class="carousel-track">
                                             <figure class="carousel-slide">
                                                 <img src="../Gifs & Pics/Sokochess/Screen.png" alt="Screenshot">
-                                                <figcaption>Capture d'écran</figcaption>
+                                                <figcaption data-fr="Capture d'écran" data-en="Screenshot">Capture d'écran</figcaption>
                                             </figure>
                                             <figure class="carousel-slide">
                                                 <img src="../Gifs & Pics/Sokochess/Gameplay.gif" alt="Gameplay">
@@ -166,18 +170,17 @@
                             </div>
 
                             <div>
-                                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);">Level
-                                    Design</h3>
+                                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);">Level Design</h3>
                                 <div class="carousel" id="carousel-ld">
                                     <div class="carousel-track-container">
                                         <div class="carousel-track">
                                             <figure class="carousel-slide">
                                                 <img src="../Gifs & Pics/Sokochess/LD/LD_1.png" alt="Level 1">
-                                                <figcaption>Niveau 1</figcaption>
+                                                <figcaption data-fr="Niveau 1" data-en="Level 1">Niveau 1</figcaption>
                                             </figure>
                                             <figure class="carousel-slide">
                                                 <img src="../Gifs & Pics/Sokochess/LD/LD_2.png" alt="Level 2">
-                                                <figcaption>Niveau 2</figcaption>
+                                                <figcaption data-fr="Niveau 2" data-en="Level 2">Niveau 2</figcaption>
                                             </figure>
                                         </div>
                                     </div>
@@ -194,22 +197,21 @@
                             </div>
 
                             <div>
-                                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);">
-                                    Interface Utilisateur</h3>
+                                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);" data-fr="Interface Utilisateur" data-en="User Interface">Interface Utilisateur</h3>
                                 <div class="carousel" id="carousel-ui">
                                     <div class="carousel-track-container">
                                         <div class="carousel-track">
                                             <figure class="carousel-slide">
                                                 <img src="../Gifs & Pics/Sokochess/UI/MainScreen.png" alt="Main Screen">
-                                                <figcaption>Écran principal</figcaption>
+                                                <figcaption data-fr="Écran principal" data-en="Main screen">Écran principal</figcaption>
                                             </figure>
                                             <figure class="carousel-slide">
                                                 <img src="../Gifs & Pics/Sokochess/UI/Hud.png" alt="HUD">
-                                                <figcaption>Interface en jeu</figcaption>
+                                                <figcaption data-fr="Interface en jeu" data-en="In-game HUD">Interface en jeu</figcaption>
                                             </figure>
                                             <figure class="carousel-slide">
                                                 <img src="../Gifs & Pics/Sokochess/UI/WinScreen.png" alt="Win Screen">
-                                                <figcaption>Écran victoire</figcaption>
+                                                <figcaption data-fr="Écran victoire" data-en="Victory screen">Écran victoire</figcaption>
                                             </figure>
                                         </div>
                                     </div>
@@ -227,14 +229,14 @@
                         </div>
                     </div>
                     <div class="project-section">
-                        <h2>L'équipe</h2>
+                        <h2 data-fr="L'équipe" data-en="The team">L'équipe</h2>
                         <ul class="team-list">
                             <li class="team-list-item">
                                 <strong>Louis GARRIGUES</strong>
                                 <span>- Gameplay Programming / Game Art / UI Design / Level Design</span>
                             </li>
                         </ul>
-                        <h3 class="team-category-title">Programmation</h3>
+                        <h3 class="team-category-title" data-fr="Programmation" data-en="Programming">Programmation</h3>
                         <ul class="team-list">
                             <li class="team-list-item">
                                 <strong>Kylian LEGUEN</strong>
@@ -258,23 +260,23 @@
 
                 <aside class="project-sidebar">
                     <div class="project-info-card">
-                        <h3>Informations</h3>
+                        <h3 data-fr="Informations" data-en="Information">Informations</h3>
                         <dl class="info-list">
-                            <dt>Genre</dt>
-                            <dd>Sokoban - Puzzle Game</dd>
-                            <dt>Plateforme</dt>
-                            <dd>Web & PC</dd>
-                            <dt>Moteur</dt>
+                            <dt data-fr="Genre" data-en="Genre">Genre</dt>
+                            <dd data-fr="Sokoban - Puzzle Game" data-en="Sokoban - Puzzle Game">Sokoban - Puzzle Game</dd>
+                            <dt data-fr="Plateforme" data-en="Platform">Plateforme</dt>
+                            <dd data-fr="Web & PC" data-en="Web & PC">Web & PC</dd>
+                            <dt data-fr="Moteur" data-en="Engine">Moteur</dt>
                             <dd>Godot Engine</dd>
-                            <dt>Langage</dt>
+                            <dt data-fr="Langage" data-en="Language">Langage</dt>
                             <dd>C#</dd>
-                            <dt>Durée</dt>
-                            <dd>Février - Mars 2022</dd>
+                            <dt data-fr="Durée" data-en="Duration">Durée</dt>
+                            <dd data-fr="Février - Mars 2022" data-en="February - March 2022">Février - Mars 2022</dd>
                         </dl>
                     </div>
 
                     <div class="project-info-card">
-                        <h3>Mon rôle</h3>
+                        <h3 data-fr="Mon rôle" data-en="My role">Mon rôle</h3>
                         <div class="role-tags">
                             <span class="tag tag--large">Gameplay Programming</span>
                             <span class="tag tag--large">Game Design</span>
@@ -290,7 +292,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Louis Garrigues. Tous droits réservés.</p>
+            <p data-fr="&copy; 2025 Louis Garrigues. Tous droits réservés." data-en="&copy; 2025 Louis Garrigues. All rights reserved.">&copy; 2025 Louis Garrigues. Tous droits réservés.</p>
         </div>
     </footer>
 

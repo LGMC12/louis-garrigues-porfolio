@@ -3,6 +3,8 @@
 // ========================================
 
 document.addEventListener('DOMContentLoaded', () => {
+    initThemeToggle();
+    initLanguageToggle();
     initLazyLoading();
     initNavigation();
     initProjectCards();
@@ -11,7 +13,84 @@ document.addEventListener('DOMContentLoaded', () => {
     initSearchOverlay();
     initScrollReveal();
     initSmoothScroll();
+    initEmailLink();
 });
+
+// ========================================
+// Email link: copy to clipboard with feedback
+// ========================================
+function initEmailLink() {
+    const link = document.getElementById('email-link');
+    if (!link) return;
+    const label = link.querySelector('.email-label');
+    const email = link.dataset.email;
+    let resetTimer = null;
+    link.addEventListener('click', (e) => {
+        if (navigator.clipboard) {
+            e.preventDefault();
+            navigator.clipboard.writeText(email).then(() => {
+                const original = label.textContent;
+                const msg = document.documentElement.lang === 'en' ? 'Copied!' : 'Copié !';
+                label.textContent = msg;
+                clearTimeout(resetTimer);
+                resetTimer = setTimeout(() => {
+                    label.textContent = email;
+                }, 1500);
+            });
+            window.location.href = link.href;
+        }
+    });
+}
+
+// ========================================
+// Language Toggle (FR / EN)
+// ========================================
+function applyLanguage(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+        el.innerHTML = el.dataset[lang];
+    });
+    document.querySelectorAll('[data-placeholder-fr][data-placeholder-en]').forEach(el => {
+        el.placeholder = lang === 'fr' ? el.dataset.placeholderFr : el.dataset.placeholderEn;
+    });
+    document.querySelectorAll('[data-title-fr][data-title-en]').forEach(el => {
+        el.title = lang === 'fr' ? el.dataset.titleFr : el.dataset.titleEn;
+    });
+    const btn = document.getElementById('lang-toggle');
+    if (btn) btn.textContent = lang === 'fr' ? 'EN' : 'FR';
+    if (window._refreshDynamicLabels) window._refreshDynamicLabels();
+}
+
+// ========================================
+// Theme Toggle (Light / Dark)
+// ========================================
+function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+}
+
+function initThemeToggle() {
+    const btn = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    applyTheme(savedTheme);
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+        const newTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        applyTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
+}
+
+function initLanguageToggle() {
+    const btn = document.getElementById('lang-toggle');
+    const savedLang = localStorage.getItem('lang') || 'fr';
+    applyLanguage(savedLang);
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+        const newLang = document.documentElement.lang === 'fr' ? 'en' : 'fr';
+        applyLanguage(newLang);
+        localStorage.setItem('lang', newLang);
+    });
+}
 
 // ========================================
 // Lazy Loading for Images
@@ -165,7 +244,11 @@ function initProjectFilter() {
             filterInput.value = chip ? chip.textContent.trim() : tag;
             filterClear.classList.add('visible');
         } else {
-            filterInput.value = `${activeFilters.size} filtres actifs`;
+            const lang = document.documentElement.lang === 'en' ? 'en' : 'fr';
+            const count = activeFilters.size;
+            filterInput.value = lang === 'en'
+                ? `${count} active filter${count > 1 ? 's' : ''}`
+                : `${count} filtre${count > 1 ? 's' : ''} actif${count > 1 ? 's' : ''}`;
             filterClear.classList.add('visible');
         }
     }
@@ -197,9 +280,11 @@ function initProjectFilter() {
 
         const applyLabel = document.getElementById('overlay-apply-label');
         if (applyLabel) {
+            const lang = document.documentElement.lang === 'en' ? 'en' : 'fr';
+            const base = lang === 'en' ? 'View projects' : 'Voir les projets';
             applyLabel.textContent = activeFilters.size > 0
-                ? `Voir les projets (${visibleCount})`
-                : 'Voir les projets';
+                ? `${base} (${visibleCount})`
+                : base;
         }
 
         if (noResults) {
@@ -225,6 +310,7 @@ function initProjectFilter() {
     window._toggleProjectTag = toggleTag;
     window._clearProjectFilters = clearAll;
     window._getActiveFilters = () => activeFilters;
+    window._refreshDynamicLabels = applyFilter;
 
     filterClear.addEventListener('click', clearAll);
 
@@ -283,7 +369,15 @@ function initSearchOverlay() {
         const applyLabel = document.getElementById('overlay-apply-label');
         if (!applyLabel) return;
         const count = isProjectPage ? localFilters.size : (window._getActiveFilters ? window._getActiveFilters().size : 0);
-        applyLabel.textContent = count > 0 ? `Voir les projets (${count} filtre${count > 1 ? 's' : ''})` : 'Voir les projets';
+        const lang = document.documentElement.lang === 'en' ? 'en' : 'fr';
+        const base = lang === 'en' ? 'View projects' : 'Voir les projets';
+        if (count > 0) {
+            applyLabel.textContent = lang === 'en'
+                ? `${base} (${count} filter${count > 1 ? 's' : ''})`
+                : `${base} (${count} filtre${count > 1 ? 's' : ''})`;
+        } else {
+            applyLabel.textContent = base;
+        }
     }
 
     navInput.addEventListener('click', (e) => {

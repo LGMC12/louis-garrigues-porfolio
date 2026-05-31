@@ -27,18 +27,23 @@
                 <svg class="nav-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
                 </svg>
-                <input type="text" id="filter-input" class="nav-search-input" placeholder="Unity, VFX, Shaders…" readonly>
+                <input type="text" id="filter-input" class="nav-search-input" placeholder="Unity, VFX, Shaders…" data-placeholder-fr="Unity, VFX, Shaders…" data-placeholder-en="Unity, VFX, Shaders…" readonly>
                 <button class="filter-clear" id="filter-clear" aria-label="Effacer">
                     <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
                 </button>
             </div>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            </button>
+            <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">EN</button>
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
                 <span class="hamburger"></span>
             </button>
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="#projects" class="nav-link">Portfolio</a></li>
-                <li><a href="#about" class="nav-link">À Propos</a></li>
-                <li><a href="#contact" class="nav-link nav-link--cta">Contact</a></li>
+                <li><a href="#projects" class="nav-link" data-fr="Portfolio" data-en="Portfolio">Portfolio</a></li>
+                <li><a href="#about" class="nav-link" data-fr="À Propos" data-en="About">À Propos</a></li>
+                <li><a href="#contact" class="nav-link nav-link--cta" data-fr="Contact" data-en="Contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -51,7 +56,7 @@
                     <svg class="search-overlay-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
                     </svg>
-                    <input type="text" id="overlay-input" class="search-overlay-input" placeholder="Rechercher par technologie, rôle…" autocomplete="off" spellcheck="false">
+                    <input type="text" id="overlay-input" class="search-overlay-input" placeholder="Rechercher par technologie, rôle…" data-placeholder-fr="Rechercher par technologie, rôle…" data-placeholder-en="Search by technology, role…" autocomplete="off" spellcheck="false">
                     <button class="search-overlay-close" id="search-overlay-close" aria-label="Fermer">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
                         <span>Esc</span>
@@ -59,7 +64,7 @@
                 </div>
                 <div class="search-overlay-groups">
                     <div class="search-overlay-group">
-                        <p class="search-overlay-group-label">Moteur</p>
+                        <p class="search-overlay-group-label" data-fr="Moteur" data-en="Engine">Moteur</p>
                         <div class="search-overlay-tags">
                             <button class="overlay-tag" data-tag="unity">Unity</button>
                             <button class="overlay-tag" data-tag="unreal">Unreal</button>
@@ -67,7 +72,7 @@
                         </div>
                     </div>
                     <div class="search-overlay-group">
-                        <p class="search-overlay-group-label">Compétences</p>
+                        <p class="search-overlay-group-label" data-fr="Compétences" data-en="Skills">Compétences</p>
                         <div class="search-overlay-tags">
                             <button class="overlay-tag" data-tag="vfx">VFX</button>
                             <button class="overlay-tag" data-tag="tech art">Tech Art</button>
@@ -79,16 +84,16 @@
                             <button class="overlay-tag" data-tag="game art">Game Art</button>
                             <button class="overlay-tag" data-tag="shaders">Shaders</button>
                             <button class="overlay-tag" data-tag="programming">Programming</button>
-                            <button class="overlay-tag" data-tag="mathématiques">Mathématiques</button>
-                            <button class="overlay-tag" data-tag="algorithmie">Algorithmie</button>
+                            <button class="overlay-tag" data-tag="mathématiques" data-fr="Mathématiques" data-en="Mathematics">Mathématiques</button>
+                            <button class="overlay-tag" data-tag="algorithmie" data-fr="Algorithmie" data-en="Algorithms">Algorithmie</button>
                             <button class="overlay-tag" data-tag="rnd">R&D</button>
                         </div>
                     </div>
                 </div>
                 <div class="search-overlay-footer">
-                    <button class="overlay-clear-all" id="overlay-clear-all">Effacer les filtres</button>
+                    <button class="overlay-clear-all" id="overlay-clear-all" data-fr="Effacer les filtres" data-en="Clear filters">Effacer les filtres</button>
                     <button class="overlay-apply" id="overlay-apply">
-                        <span id="overlay-apply-label">Voir les projets</span>
+                        <span id="overlay-apply-label" data-fr="Voir les projets" data-en="View projects">Voir les projets</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                     </button>
                 </div>
@@ -104,13 +109,13 @@
             <div class="hero-glow hero-glow--2"></div>
         </div>
         <div class="hero-content">
-            <p class="hero-subtitle">Bonjour, je suis</p>
+            <p class="hero-subtitle" data-fr="Bonjour, je suis" data-en="Hello, I'm">Bonjour, je suis</p>
             <h1 class="hero-title">Louis Garrigues</h1>
             <p class="hero-role">Technical & VFX Artist</p>
-            <p class="hero-description">Gameplay Programmer passionné par les effets visuels et le game
+            <p class="hero-description" data-fr="Gameplay Programmer passionné par les effets visuels et le game feel.<br>Étudiant à ISART DIGITAL." data-en="Gameplay Programmer passionate about visual effects and game feel.<br>Student at ISART DIGITAL.">Gameplay Programmer passionné par les effets visuels et le game
                 feel.<br>Étudiant à ISART DIGITAL.</p>
             <a href="#projects" class="btn btn-primary">
-                <span>Voir mes projets</span>
+                <span data-fr="Voir mes projets" data-en="View my projects">Voir mes projets</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M7 17L17 7M17 7H7M17 7V17" />
                 </svg>
@@ -125,8 +130,8 @@
     <!-- Projects Section -->
     <section class="projects" id="projects">
         <div class="container">
-            <h2 class="section-title reveal">Portfolio</h2>
-            <p class="section-subtitle reveal">Mes projets étudiants et personnels</p>
+            <h2 class="section-title reveal" data-fr="Portfolio" data-en="Portfolio">Portfolio</h2>
+            <p class="section-subtitle reveal" data-fr="Mes projets étudiants et personnels" data-en="My student and personal projects">Mes projets étudiants et personnels</p>
 
             <!-- Filter Tags -->
             <div class="projects-filter reveal">
@@ -144,8 +149,8 @@
                     <button class="filter-tag" data-tag="game art">Game Art</button>
                     <button class="filter-tag" data-tag="shaders">Shaders</button>
                     <button class="filter-tag" data-tag="programming">Programming</button>
-                    <button class="filter-tag" data-tag="mathématiques">Mathématiques</button>
-                    <button class="filter-tag" data-tag="algorithmie">Algorithmie</button>
+                    <button class="filter-tag" data-tag="mathématiques" data-fr="Mathématiques" data-en="Mathematics">Mathématiques</button>
+                    <button class="filter-tag" data-tag="algorithmie" data-fr="Algorithmie" data-en="Algorithms">Algorithmie</button>
                     <button class="filter-tag" data-tag="rnd">R&D</button>
                 </div>
             </div>
@@ -157,13 +162,13 @@
                         <img src="optimized/thumbnails/solar-leap.jpg" alt="Solar Leap" class="project-img"
                             loading="lazy" decoding="async">
                         <div class="project-overlay">
-                            <span class="project-view">Voir le projet</span>
+                            <span class="project-view" data-fr="Voir le projet" data-en="View project">Voir le projet</span>
                         </div>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Solar Leap</h3>
-                        <p class="project-meta">Puzzle Platformer 3D • Unity / C#</p>
-                        <p class="project-summary">Puzzle-platformer 3D développé pour PC et Nintendo Switch. Incarnez
+                        <p class="project-meta" data-fr="Puzzle Platformer 3D • Unity / C#" data-en="3D Puzzle Platformer • Unity / C#">Puzzle Platformer 3D • Unity / C#</p>
+                        <p class="project-summary" data-fr="Puzzle-platformer 3D développé pour PC et Nintendo Switch. Incarnez Hélio, un robot jardinier accompagné de Lucy la graine de tournesol." data-en="3D puzzle-platformer developed for PC and Nintendo Switch. Play as Hélio, a gardening robot accompanied by Lucy the sunflower seed.">Puzzle-platformer 3D développé pour PC et Nintendo Switch. Incarnez
                             Hélio, un robot jardinier accompagné de Lucy la graine de tournesol.</p>
                         <div class="project-tags">
                             <span class="tag">Gameplay Programming</span>
@@ -171,7 +176,7 @@
                             <span class="tag">VFX</span>
                             <span class="tag">UI</span>
                         </div>
-                        <p class="project-team">Équipe de 18 • Sept 2024 - Juin 2025</p>
+                        <p class="project-team" data-fr="Équipe de 18 • Sept 2024 - Juin 2025" data-en="Team of 18 • Sept 2024 - June 2025">Équipe de 18 • Sept 2024 - Juin 2025</p>
                     </div>
                 </a>
 
@@ -181,20 +186,20 @@
                         <img src="optimized/thumbnails/woobly-alchemy.jpg" alt="A Woobly Alchemy" class="project-img"
                             loading="lazy" decoding="async">
                         <div class="project-overlay">
-                            <span class="project-view">Voir le projet</span>
+                            <span class="project-view" data-fr="Voir le projet" data-en="View project">Voir le projet</span>
                         </div>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">A Woobly Alchemy</h3>
-                        <p class="project-meta">Sandbox VR • Unreal 5.4 (Blueprint)</p>
-                        <p class="project-summary">Jeu VR sur Oculus Quest 2 où vous incarnez un alchimiste
+                        <p class="project-meta" data-fr="Sandbox VR • Unreal 5.4 (Blueprint)" data-en="VR Sandbox • Unreal 5.4 (Blueprint)">Sandbox VR • Unreal 5.4 (Blueprint)</p>
+                        <p class="project-summary" data-fr="Jeu VR sur Oculus Quest 2 où vous incarnez un alchimiste confectionnant des potions aux effets étranges avec des ingrédients douteux." data-en="VR game on Oculus Quest 2 where you play an alchemist crafting potions with strange effects from dubious ingredients.">Jeu VR sur Oculus Quest 2 où vous incarnez un alchimiste
                             confectionnant des potions aux effets étranges avec des ingrédients douteux.</p>
                         <div class="project-tags">
                             <span class="tag">VFX</span>
                             <span class="tag">Game Art</span>
                             <span class="tag">Game Design</span>
                         </div>
-                        <p class="project-team">Équipe de 4 • 3 jours</p>
+                        <p class="project-team" data-fr="Équipe de 4 • 3 jours" data-en="Team of 4 • 3 days">Équipe de 4 • 3 jours</p>
                     </div>
                 </a>
 
@@ -204,20 +209,20 @@
                         <img src="optimized/thumbnails/iron-express.jpg" alt="Iron Express" class="project-img"
                             loading="lazy" decoding="async">
                         <div class="project-overlay">
-                            <span class="project-view">Voir le projet</span>
+                            <span class="project-view" data-fr="Voir le projet" data-en="View project">Voir le projet</span>
                         </div>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Iron Express</h3>
-                        <p class="project-meta">Tower Defense Rogue Lite • Unity / C#</p>
-                        <p class="project-summary">Tower Defense mobile Free to Play mélangé avec du Rogue Lite.
+                        <p class="project-meta" data-fr="Tower Defense Rogue Lite • Unity / C#" data-en="Tower Defense Rogue Lite • Unity / C#">Tower Defense Rogue Lite • Unity / C#</p>
+                        <p class="project-summary" data-fr="Tower Defense mobile Free to Play mélangé avec du Rogue Lite. Survivez lors de votre périple en train en gérant vos ressources." data-en="Free to Play mobile Tower Defense mixed with Rogue Lite. Survive your train journey by managing your resources.">Tower Defense mobile Free to Play mélangé avec du Rogue Lite.
                             Survivez lors de votre périple en train en gérant vos ressources.</p>
                         <div class="project-tags">
                             <span class="tag">VFX</span>
                             <span class="tag">Gamefeel</span>
                             <span class="tag">Gameplay Programming</span>
                         </div>
-                        <p class="project-team">Équipe de 8 • Avril - Juin 2023</p>
+                        <p class="project-team" data-fr="Équipe de 8 • Avril - Juin 2023" data-en="Team of 8 • April - June 2023">Équipe de 8 • Avril - Juin 2023</p>
                     </div>
                 </a>
 
@@ -227,20 +232,20 @@
                         <img src="optimized/thumbnails/miws-legacy.jpg" alt="Miw's Legacy" class="project-img"
                             loading="lazy" decoding="async">
                         <div class="project-overlay">
-                            <span class="project-view">Voir le projet</span>
+                            <span class="project-view" data-fr="Voir le projet" data-en="View project">Voir le projet</span>
                         </div>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Miw's Legacy</h3>
-                        <p class="project-meta">Platformer 2D • Unity / C#</p>
-                        <p class="project-summary">Platformer 2D en Égypte antique. Incarnez Miw, fils de la déesse
+                        <p class="project-meta" data-fr="Platformer 2D • Unity / C#" data-en="2D Platformer • Unity / C#">Platformer 2D • Unity / C#</p>
+                        <p class="project-summary" data-fr="Platformer 2D en Égypte antique. Incarnez Miw, fils de la déesse Bastet, dans une quête pour ressusciter sa mère." data-en="2D platformer set in Ancient Egypt. Play as Miw, son of the goddess Bastet, on a quest to resurrect his mother.">Platformer 2D en Égypte antique. Incarnez Miw, fils de la déesse
                             Bastet, dans une quête pour ressusciter sa mère.</p>
                         <div class="project-tags">
                             <span class="tag">Gameplay Programming</span>
                             <span class="tag">Gamefeel</span>
                             <span class="tag">UI</span>
                         </div>
-                        <p class="project-team">Équipe de 12 • Janvier - Mars 2023</p>
+                        <p class="project-team" data-fr="Équipe de 12 • Janvier - Mars 2023" data-en="Team of 12 • January - March 2023">Équipe de 12 • Janvier - Mars 2023</p>
                     </div>
                 </a>
 
@@ -250,20 +255,20 @@
                         <img src="optimized/thumbnails/magic-slimes.jpg" alt="Magic Slimes" class="project-img"
                             loading="lazy" decoding="async">
                         <div class="project-overlay">
-                            <span class="project-view">Voir le projet</span>
+                            <span class="project-view" data-fr="Voir le projet" data-en="View project">Voir le projet</span>
                         </div>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Magic Slimes</h3>
-                        <p class="project-meta">Rush Puzzle Game 3D • Unity / C#</p>
-                        <p class="project-summary">Puzzle Game 3D inspiré du jeu Rush. Placez des plaques d'action pour
+                        <p class="project-meta" data-fr="Rush Puzzle Game 3D • Unity / C#" data-en="3D Rush Puzzle Game • Unity / C#">Rush Puzzle Game 3D • Unity / C#</p>
+                        <p class="project-summary" data-fr="Puzzle Game 3D inspiré du jeu Rush. Placez des plaques d'action pour guider les Slimes à travers 5 niveaux." data-en="3D Puzzle Game inspired by Rush. Place action plates to guide the Slimes through 5 levels.">Puzzle Game 3D inspiré du jeu Rush. Placez des plaques d'action pour
                             guider les Slimes à travers 5 niveaux.</p>
                         <div class="project-tags">
                             <span class="tag">Gameplay Programming</span>
                             <span class="tag">VFX</span>
                             <span class="tag">Gamefeel</span>
                         </div>
-                        <p class="project-team">Projet solo • Nov - Déc 2022</p>
+                        <p class="project-team" data-fr="Projet solo • Nov - Déc 2022" data-en="Solo project • Nov - Dec 2022">Projet solo • Nov - Déc 2022</p>
                     </div>
                 </a>
 
@@ -273,20 +278,20 @@
                         <img src="Gifs & Pics/OpenGL/3D Cubes/Camera and textured cubes.gif" alt="OpenGL"
                             class="project-img" loading="lazy" decoding="async">
                         <div class="project-overlay">
-                            <span class="project-view">Voir le projet</span>
+                            <span class="project-view" data-fr="Voir le projet" data-en="View project">Voir le projet</span>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Apprentissage OpenGL</h3>
-                        <p class="project-meta">Graphisme Bas Niveau • C# / GLSL / OpenTK</p>
-                        <p class="project-summary">Apprentissage autonome d'OpenGL avec OpenTK. Exploration des
+                        <h3 class="project-title" data-fr="Apprentissage OpenGL" data-en="Learning OpenGL">Apprentissage OpenGL</h3>
+                        <p class="project-meta" data-fr="Graphisme Bas Niveau • C# / GLSL / OpenTK" data-en="Low-Level Graphics • C# / GLSL / OpenTK">Graphisme Bas Niveau • C# / GLSL / OpenTK</p>
+                        <p class="project-summary" data-fr="Apprentissage autonome d'OpenGL avec OpenTK. Exploration des fondamentaux du rendu graphique et des shaders." data-en="Self-taught OpenGL with OpenTK. Exploring the fundamentals of graphics rendering and shaders.">Apprentissage autonome d'OpenGL avec OpenTK. Exploration des
                             fondamentaux du rendu graphique et des shaders.</p>
                         <div class="project-tags">
                             <span class="tag">R&D</span>
                             <span class="tag">Shaders</span>
-                            <span class="tag">Mathématiques</span>
+                            <span class="tag" data-fr="Mathématiques" data-en="Mathematics">Mathématiques</span>
                         </div>
-                        <p class="project-team">Projet personnel • 2 mois</p>
+                        <p class="project-team" data-fr="Projet personnel • 2 mois" data-en="Personal project • 2 months">Projet personnel • 2 mois</p>
                     </div>
                 </a>
 
@@ -296,20 +301,20 @@
                         <img src="optimized/thumbnails/sokochess.jpg" alt="SokoChess" class="project-img" loading="lazy"
                             decoding="async">
                         <div class="project-overlay">
-                            <span class="project-view">Voir le projet</span>
+                            <span class="project-view" data-fr="Voir le projet" data-en="View project">Voir le projet</span>
                         </div>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">SokoChess</h3>
-                        <p class="project-meta">Sokoban Puzzle • Godot / C#</p>
-                        <p class="project-summary">Puzzle game mélangeant les mécaniques de Sokoban avec les règles des
+                        <p class="project-meta" data-fr="Sokoban Puzzle • Godot / C#" data-en="Sokoban Puzzle • Godot / C#">Sokoban Puzzle • Godot / C#</p>
+                        <p class="project-summary" data-fr="Puzzle game mélangeant les mécaniques de Sokoban avec les règles des échecs." data-en="Puzzle game blending Sokoban mechanics with the rules of chess.">Puzzle game mélangeant les mécaniques de Sokoban avec les règles des
                             échecs.</p>
                         <div class="project-tags">
                             <span class="tag">Gameplay Programming</span>
                             <span class="tag">Game Design</span>
                             <span class="tag">Gamefeel</span>
                         </div>
-                        <p class="project-team">Équipe • Février - Mars 2022</p>
+                        <p class="project-team" data-fr="Équipe • Février - Mars 2022" data-en="Team • February - March 2022">Équipe • Février - Mars 2022</p>
                     </div>
                 </a>
 
@@ -317,8 +322,8 @@
             </div>
 
             <div class="projects-no-results" id="projects-no-results">
-                <p>Aucun projet ne correspond à votre recherche.</p>
-                <button class="btn-reset" id="filter-reset">Tout afficher</button>
+                <p data-fr="Aucun projet ne correspond à votre recherche." data-en="No project matches your search.">Aucun projet ne correspond à votre recherche.</p>
+                <button class="btn-reset" id="filter-reset" data-fr="Tout afficher" data-en="Show all">Tout afficher</button>
             </div>
         </div>
     </section>
@@ -328,25 +333,25 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text reveal">
-                    <h2 class="section-title reveal">À Propos</h2>
-                    <p class="about-intro">
+                    <h2 class="section-title reveal" data-fr="À Propos" data-en="About">À Propos</h2>
+                    <p class="about-intro" data-fr="Bonjour ! Je m'appelle <strong>Louis Garrigues</strong> et je suis étudiant en programmation gameplay à <strong>ISART DIGITAL</strong>." data-en="Hello! My name is <strong>Louis Garrigues</strong> and I'm a gameplay programming student at <strong>ISART DIGITAL</strong>.">
                         Bonjour ! Je m'appelle <strong>Louis Garrigues</strong> et je suis étudiant en programmation
                         gameplay à <strong>ISART DIGITAL</strong>.
                     </p>
-                    <p>
+                    <p data-fr="Aimant par les jeux vidéo et la programmation depuis plusieurs années, j'ai découvert récemment la conception et la réalisation d'effets visuels que je trouve très passionnant, et c'est pourquoi j'aimerais en faire mon métier !" data-en="Passionate about video games and programming for several years, I recently discovered the design and creation of visual effects, which I find truly exciting — that's why I'd love to make it my career!">
                         Aimant par les jeux vidéo et la programmation depuis plusieurs années, j'ai découvert
                         récemment la conception et la réalisation d'effets visuels que je trouve très passionnant, et c'est
                         pourquoi j'aimerais en faire mon métier !
                     </p>
-                    <p>
+                    <p data-fr="Sur ce site, vous pourrez trouver mes projets étudiants et personnels." data-en="On this site, you'll find my student and personal projects.">
                         Sur ce site, vous pourrez trouver mes projets étudiants et personnels.
                     </p>
                 </div>
                 <div class="about-skills reveal">
-                    <h3 class="skills-title">Compétences</h3>
+                    <h3 class="skills-title" data-fr="Compétences" data-en="Skills">Compétences</h3>
                     <div class="skills-grid">
                         <div class="skill-category">
-                            <h4>Moteurs</h4>
+                            <h4 data-fr="Moteurs" data-en="Engines">Moteurs</h4>
                             <ul>
                                 <li>Unity</li>
                                 <li>Unreal Engine 5</li>
@@ -354,7 +359,7 @@
                             </ul>
                         </div>
                         <div class="skill-category">
-                            <h4>VFX Temps Réel</h4>
+                            <h4 data-fr="VFX Temps Réel" data-en="Real-Time VFX">VFX Temps Réel</h4>
                             <ul>
                                 <li>PopcornFX</li>
                                 <li>VFX Graph (Unity)</li>
@@ -370,7 +375,7 @@
                             </ul>
                         </div>
                         <div class="skill-category">
-                            <h4>Programmation</h4>
+                            <h4 data-fr="Programmation" data-en="Programming">Programmation</h4>
                             <ul>
                                 <li>C#</li>
                                 <li>Blueprint</li>
@@ -386,17 +391,17 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <p class="contact-text">
+            <h2 class="section-title" data-fr="Contact" data-en="Contact">Contact</h2>
+            <p class="contact-text" data-fr="Si vous souhaitez en savoir plus à mon propos ou sur mes travaux, n'hésitez pas à me contacter !" data-en="If you'd like to know more about me or my work, feel free to get in touch!">
                 Si vous souhaitez en savoir plus à mon propos ou sur mes travaux, n'hésitez pas à me contacter !
             </p>
             <div class="contact-links">
-                <a href="mailto:louis.garrigues.lg12@gmail.com" class="contact-link">
+                <a href="mailto:louis.garrigues.lg12@gmail.com" class="contact-link" id="email-link" data-email="louis.garrigues.lg12@gmail.com">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                         <polyline points="22,6 12,13 2,6" />
                     </svg>
-                    <span>louis.garrigues.lg12@gmail.com</span>
+                    <span class="email-label" data-fr-default="louis.garrigues.lg12@gmail.com" data-en-default="louis.garrigues.lg12@gmail.com">louis.garrigues.lg12@gmail.com</span>
                 </a>
                 <a href="tel:+33627465368" class="contact-link">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -419,7 +424,7 @@
                         <line x1="16" y1="17" x2="8" y2="17" />
                         <polyline points="10 9 9 9 8 9" />
                     </svg>
-                    <span>Mon CV</span>
+                    <span data-fr="Mon CV" data-en="My Resume">Mon CV</span>
                 </a>
             </div>
         </div>
@@ -428,7 +433,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Louis Garrigues. Tous droits réservés.</p>
+            <p data-fr="&copy; 2025 Louis Garrigues. Tous droits réservés." data-en="&copy; 2025 Louis Garrigues. All rights reserved.">&copy; 2025 Louis Garrigues. Tous droits réservés.</p>
         </div>
     </footer>
 

@@ -24,18 +24,23 @@
                 <svg class="nav-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
                 </svg>
-                <input type="text" id="filter-input" class="nav-search-input" placeholder="Unity, VFX, Shaders…" readonly>
+                <input type="text" id="filter-input" class="nav-search-input" placeholder="Unity, VFX, Shaders…" data-placeholder-fr="Unity, VFX, Shaders…" data-placeholder-en="Unity, VFX, Shaders…" readonly>
                 <button class="filter-clear" id="filter-clear" aria-label="Effacer">
                     <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
                 </button>
             </div>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            </button>
+            <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">EN</button>
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
                 <span class="hamburger"></span>
             </button>
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="../index.html#projects" class="nav-link">Portfolio</a></li>
-                <li><a href="../index.html#about" class="nav-link">À Propos</a></li>
-                <li><a href="../index.html#contact" class="nav-link nav-link--cta">Contact</a></li>
+                <li><a href="../index.html#projects" class="nav-link" data-fr="Portfolio" data-en="Portfolio">Portfolio</a></li>
+                <li><a href="../index.html#about" class="nav-link" data-fr="À Propos" data-en="About">À Propos</a></li>
+                <li><a href="../index.html#contact" class="nav-link nav-link--cta" data-fr="Contact" data-en="Contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -48,7 +53,7 @@
                     <svg class="search-overlay-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
                     </svg>
-                    <input type="text" id="overlay-input" class="search-overlay-input" placeholder="Rechercher par technologie, rôle…" autocomplete="off" spellcheck="false">
+                    <input type="text" id="overlay-input" class="search-overlay-input" placeholder="Rechercher par technologie, rôle…" data-placeholder-fr="Rechercher par technologie, rôle…" data-placeholder-en="Search by technology, role…" autocomplete="off" spellcheck="false">
                     <button class="search-overlay-close" id="search-overlay-close" aria-label="Fermer">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
                         <span>Esc</span>
@@ -56,7 +61,7 @@
                 </div>
                 <div class="search-overlay-groups">
                     <div class="search-overlay-group">
-                        <p class="search-overlay-group-label">Moteur</p>
+                        <p class="search-overlay-group-label" data-fr="Moteur" data-en="Engine">Moteur</p>
                         <div class="search-overlay-tags">
                             <button class="overlay-tag" data-tag="unity">Unity</button>
                             <button class="overlay-tag" data-tag="unreal">Unreal</button>
@@ -64,7 +69,7 @@
                         </div>
                     </div>
                     <div class="search-overlay-group">
-                        <p class="search-overlay-group-label">Compétences</p>
+                        <p class="search-overlay-group-label" data-fr="Compétences" data-en="Skills">Compétences</p>
                         <div class="search-overlay-tags">
                             <button class="overlay-tag" data-tag="vfx">VFX</button>
                             <button class="overlay-tag" data-tag="tech art">Tech Art</button>
@@ -76,16 +81,16 @@
                             <button class="overlay-tag" data-tag="game art">Game Art</button>
                             <button class="overlay-tag" data-tag="shaders">Shaders</button>
                             <button class="overlay-tag" data-tag="programming">Programming</button>
-                            <button class="overlay-tag" data-tag="mathématiques">Mathématiques</button>
-                            <button class="overlay-tag" data-tag="algorithmie">Algorithmie</button>
+                            <button class="overlay-tag" data-tag="mathématiques" data-fr="Mathématiques" data-en="Mathematics">Mathématiques</button>
+                            <button class="overlay-tag" data-tag="algorithmie" data-fr="Algorithmie" data-en="Algorithms">Algorithmie</button>
                             <button class="overlay-tag" data-tag="rnd">R&D</button>
                         </div>
                     </div>
                 </div>
                 <div class="search-overlay-footer">
-                    <button class="overlay-clear-all" id="overlay-clear-all">Effacer les filtres</button>
+                    <button class="overlay-clear-all" id="overlay-clear-all" data-fr="Effacer les filtres" data-en="Clear filters">Effacer les filtres</button>
                     <button class="overlay-apply" id="overlay-apply">
-                        <span id="overlay-apply-label">Voir les projets</span>
+                        <span id="overlay-apply-label" data-fr="Voir les projets" data-en="View projects">Voir les projets</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                     </button>
                 </div>
@@ -103,9 +108,9 @@
         <div class="container">
             <div class="project-hero-content">
 
-                <h1 class="project-hero-title">Apprentissage OpenGL</h1>
-                <p class="project-hero-meta">Graphisme Bas Niveau • R&D • C# / GLSL / OpenTK</p>
-                <p class="project-hero-team">Projet personnel • 2 mois (en autonomie)</p>
+                <h1 class="project-hero-title" data-fr="Apprentissage OpenGL" data-en="Learning OpenGL">Apprentissage OpenGL</h1>
+                <p class="project-hero-meta" data-fr="Graphisme Bas Niveau • R&D • C# / GLSL / OpenTK" data-en="Low-Level Graphics • R&D • C# / GLSL / OpenTK">Graphisme Bas Niveau • R&D • C# / GLSL / OpenTK</p>
+                <p class="project-hero-team" data-fr="Projet personnel • 2 mois (en autonomie)" data-en="Personal project • 2 months (self-taught)">Projet personnel • 2 mois (en autonomie)</p>
             </div>
         </div>
     </section>
@@ -115,43 +120,42 @@
             <div class="project-grid">
                 <div class="project-main">
                     <div class="project-section">
-                        <h2>Description</h2>
-                        <p>Ce projet personnel de R&D consiste en l'apprentissage autonome d'OpenGL avec la bibliothèque OpenTK
+                        <h2 data-fr="Description" data-en="Description">Description</h2>
+                        <p data-fr="Ce projet personnel de R&D consiste en l'apprentissage autonome d'OpenGL avec la bibliothèque OpenTK en C#." data-en="This personal R&D project is a self-taught exploration of OpenGL using the OpenTK library in C#.">Ce projet personnel de R&D consiste en l'apprentissage autonome d'OpenGL avec la bibliothèque OpenTK
                             en C#.</p>
-                        <p>L'objectif est d'explorer les fondamentaux du rendu graphique bas niveau, de comprendre le
+                        <p data-fr="L'objectif est d'explorer les fondamentaux du rendu graphique bas niveau, de comprendre le fonctionnement du pipeline graphique et de maîtriser la création de shaders personnalisés." data-en="The goal is to explore the fundamentals of low-level graphics rendering, understand how the graphics pipeline works, and master the creation of custom shaders.">L'objectif est d'explorer les fondamentaux du rendu graphique bas niveau, de comprendre le
                             fonctionnement du pipeline graphique et de maîtriser la création de shaders personnalisés.
                         </p>
                     </div>
 
                     <div class="project-section">
-                        <h2>Compétences développées</h2>
+                        <h2 data-fr="Compétences développées" data-en="Skills developed">Compétences développées</h2>
                         <ul class="work-list">
-                            <li>Programmation graphique bas niveau avec OpenGL</li>
-                            <li>Création de shaders en GLSL</li>
-                            <li>Mathématiques 3D (matrices, transformations, projections)</li>
-                            <li>Algorithmie de rendu</li>
-                            <li>Compréhension du pipeline graphique</li>
-                            <li>Recherches techniques</li>
+                            <li data-fr="Programmation graphique bas niveau avec OpenGL" data-en="Low-level graphics programming with OpenGL">Programmation graphique bas niveau avec OpenGL</li>
+                            <li data-fr="Création de shaders en GLSL" data-en="Shader creation in GLSL">Création de shaders en GLSL</li>
+                            <li data-fr="Mathématiques 3D (matrices, transformations, projections)" data-en="3D mathematics (matrices, transformations, projections)">Mathématiques 3D (matrices, transformations, projections)</li>
+                            <li data-fr="Algorithmie de rendu" data-en="Rendering algorithms">Algorithmie de rendu</li>
+                            <li data-fr="Compréhension du pipeline graphique" data-en="Understanding the graphics pipeline">Compréhension du pipeline graphique</li>
+                            <li data-fr="Recherches techniques" data-en="Technical research">Recherches techniques</li>
                         </ul>
                     </div>
 
                     <div class="project-section project-media">
                         <div class="carousel-grid">
                             <div>
-                                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);">Cubes
-                                    3D</h3>
+                                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);" data-fr="Cubes 3D" data-en="3D Cubes">Cubes 3D</h3>
                                 <div class="carousel" id="carousel-cubes">
                                     <div class="carousel-track-container">
                                         <div class="carousel-track">
                                             <figure class="carousel-slide">
                                                 <img src="../Gifs & Pics/OpenGL/3D Cubes/rotating cube.gif"
                                                     alt="Rotating Cube">
-                                                <figcaption>Cube en rotation</figcaption>
+                                                <figcaption data-fr="Cube en rotation" data-en="Rotating cube">Cube en rotation</figcaption>
                                             </figure>
                                             <figure class="carousel-slide">
                                                 <img src="../Gifs & Pics/OpenGL/3D Cubes/Camera and textured cubes.gif"
                                                     alt="Camera and Textured Cubes">
-                                                <figcaption>Caméra et cubes texturés</figcaption>
+                                                <figcaption data-fr="Caméra et cubes texturés" data-en="Camera and textured cubes">Caméra et cubes texturés</figcaption>
                                             </figure>
                                         </div>
                                     </div>
@@ -168,20 +172,18 @@
                             </div>
 
                             <div>
-                                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);">
-                                    Shaders
-                                </h3>
+                                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);">Shaders</h3>
                                 <div class="carousel" id="carousel-shaders">
                                     <div class="carousel-track-container">
                                         <div class="carousel-track">
                                             <figure class="carousel-slide">
                                                 <img src="../Gifs & Pics/OpenGL/HSVtoRGB.gif" alt="HSV to RGB Shader">
-                                                <figcaption>Shader HSV vers RGB</figcaption>
+                                                <figcaption data-fr="Shader HSV vers RGB" data-en="HSV to RGB shader">Shader HSV vers RGB</figcaption>
                                             </figure>
                                             <figure class="carousel-slide">
                                                 <img src="../Gifs & Pics/OpenGL/RegularPoly.gif"
                                                     alt="Regular Polygon Shader">
-                                                <figcaption>Polygones réguliers</figcaption>
+                                                <figcaption data-fr="Polygones réguliers" data-en="Regular polygons">Polygones réguliers</figcaption>
                                             </figure>
                                         </div>
                                     </div>
@@ -198,22 +200,21 @@
                             </div>
 
                             <div>
-                                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);">Formes
-                                </h3>
+                                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);" data-fr="Formes" data-en="Shapes">Formes</h3>
                                 <div class="carousel" id="carousel-shapes">
                                     <div class="carousel-track-container">
                                         <div class="carousel-track">
                                             <figure class="carousel-slide">
                                                 <img src="../Gifs & Pics/OpenGL/Shapes/Shape_1.gif" alt="Shape 1">
-                                                <figcaption>Forme 1</figcaption>
+                                                <figcaption data-fr="Forme 1" data-en="Shape 1">Forme 1</figcaption>
                                             </figure>
                                             <figure class="carousel-slide">
                                                 <img src="../Gifs & Pics/OpenGL/Shapes/Shape_2.gif" alt="Shape 2">
-                                                <figcaption>Forme 2</figcaption>
+                                                <figcaption data-fr="Forme 2" data-en="Shape 2">Forme 2</figcaption>
                                             </figure>
                                             <figure class="carousel-slide">
                                                 <img src="../Gifs & Pics/OpenGL/Shapes/Shape_3.gif" alt="Shape 3">
-                                                <figcaption>Forme 3</figcaption>
+                                                <figcaption data-fr="Forme 3" data-en="Shape 3">Forme 3</figcaption>
                                             </figure>
                                         </div>
                                     </div>
@@ -235,28 +236,28 @@
                 </div>
                 <aside class="project-sidebar">
                     <div class="project-info-card">
-                        <h3>Informations</h3>
+                        <h3 data-fr="Informations" data-en="Information">Informations</h3>
                         <dl class="info-list">
-                            <dt>Type</dt>
-                            <dd>Projet personnel / R&D</dd>
-                            <dt>Technologie</dt>
+                            <dt data-fr="Type" data-en="Type">Type</dt>
+                            <dd data-fr="Projet personnel / R&D" data-en="Personal project / R&D">Projet personnel / R&D</dd>
+                            <dt data-fr="Technologie" data-en="Technology">Technologie</dt>
                             <dd>OpenGL, OpenTK</dd>
-                            <dt>Langage</dt>
+                            <dt data-fr="Langage" data-en="Language">Langage</dt>
                             <dd>C#, GLSL</dd>
-                            <dt>Logiciel</dt>
+                            <dt data-fr="Logiciel" data-en="Software">Logiciel</dt>
                             <dd>Visual Studio 2019</dd>
-                            <dt>Durée</dt>
-                            <dd>Avril - Mai 2023</dd>
+                            <dt data-fr="Durée" data-en="Duration">Durée</dt>
+                            <dd data-fr="Avril - Mai 2023" data-en="April - May 2023">Avril - Mai 2023</dd>
                         </dl>
                     </div>
 
                     <div class="project-info-card">
-                        <h3>Compétences</h3>
+                        <h3 data-fr="Compétences" data-en="Skills">Compétences</h3>
                         <div class="role-tags">
                             <span class="tag tag--large">Programming</span>
                             <span class="tag tag--large">Shaders</span>
-                            <span class="tag tag--large">Mathématiques</span>
-                            <span class="tag tag--large">Algorithmie</span>
+                            <span class="tag tag--large" data-fr="Mathématiques" data-en="Mathematics">Mathématiques</span>
+                            <span class="tag tag--large" data-fr="Algorithmie" data-en="Algorithms">Algorithmie</span>
                             <span class="tag tag--large">R&D</span>
                         </div>
                     </div>
@@ -267,7 +268,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Louis Garrigues. Tous droits réservés.</p>
+            <p data-fr="&copy; 2025 Louis Garrigues. Tous droits réservés." data-en="&copy; 2025 Louis Garrigues. All rights reserved.">&copy; 2025 Louis Garrigues. Tous droits réservés.</p>
         </div>
     </footer>
 

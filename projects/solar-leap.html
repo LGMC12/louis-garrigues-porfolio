@@ -25,18 +25,23 @@
                 <svg class="nav-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
                 </svg>
-                <input type="text" id="filter-input" class="nav-search-input" placeholder="Unity, VFX, Shaders…" readonly>
+                <input type="text" id="filter-input" class="nav-search-input" placeholder="Unity, VFX, Shaders…" data-placeholder-fr="Unity, VFX, Shaders…" data-placeholder-en="Unity, VFX, Shaders…" readonly>
                 <button class="filter-clear" id="filter-clear" aria-label="Effacer">
                     <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
                 </button>
             </div>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            </button>
+            <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">EN</button>
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
                 <span class="hamburger"></span>
             </button>
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="../index.html#projects" class="nav-link">Portfolio</a></li>
-                <li><a href="../index.html#about" class="nav-link">À Propos</a></li>
-                <li><a href="../index.html#contact" class="nav-link nav-link--cta">Contact</a></li>
+                <li><a href="../index.html#projects" class="nav-link" data-fr="Portfolio" data-en="Portfolio">Portfolio</a></li>
+                <li><a href="../index.html#about" class="nav-link" data-fr="À Propos" data-en="About">À Propos</a></li>
+                <li><a href="../index.html#contact" class="nav-link nav-link--cta" data-fr="Contact" data-en="Contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -49,7 +54,7 @@
                     <svg class="search-overlay-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
                     </svg>
-                    <input type="text" id="overlay-input" class="search-overlay-input" placeholder="Rechercher par technologie, rôle…" autocomplete="off" spellcheck="false">
+                    <input type="text" id="overlay-input" class="search-overlay-input" placeholder="Rechercher par technologie, rôle…" data-placeholder-fr="Rechercher par technologie, rôle…" data-placeholder-en="Search by technology, role…" autocomplete="off" spellcheck="false">
                     <button class="search-overlay-close" id="search-overlay-close" aria-label="Fermer">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
                         <span>Esc</span>
@@ -57,7 +62,7 @@
                 </div>
                 <div class="search-overlay-groups">
                     <div class="search-overlay-group">
-                        <p class="search-overlay-group-label">Moteur</p>
+                        <p class="search-overlay-group-label" data-fr="Moteur" data-en="Engine">Moteur</p>
                         <div class="search-overlay-tags">
                             <button class="overlay-tag" data-tag="unity">Unity</button>
                             <button class="overlay-tag" data-tag="unreal">Unreal</button>
@@ -65,7 +70,7 @@
                         </div>
                     </div>
                     <div class="search-overlay-group">
-                        <p class="search-overlay-group-label">Compétences</p>
+                        <p class="search-overlay-group-label" data-fr="Compétences" data-en="Skills">Compétences</p>
                         <div class="search-overlay-tags">
                             <button class="overlay-tag" data-tag="vfx">VFX</button>
                             <button class="overlay-tag" data-tag="tech art">Tech Art</button>
@@ -77,16 +82,16 @@
                             <button class="overlay-tag" data-tag="game art">Game Art</button>
                             <button class="overlay-tag" data-tag="shaders">Shaders</button>
                             <button class="overlay-tag" data-tag="programming">Programming</button>
-                            <button class="overlay-tag" data-tag="mathématiques">Mathématiques</button>
-                            <button class="overlay-tag" data-tag="algorithmie">Algorithmie</button>
+                            <button class="overlay-tag" data-tag="mathématiques" data-fr="Mathématiques" data-en="Mathematics">Mathématiques</button>
+                            <button class="overlay-tag" data-tag="algorithmie" data-fr="Algorithmie" data-en="Algorithms">Algorithmie</button>
                             <button class="overlay-tag" data-tag="rnd">R&D</button>
                         </div>
                     </div>
                 </div>
                 <div class="search-overlay-footer">
-                    <button class="overlay-clear-all" id="overlay-clear-all">Effacer les filtres</button>
+                    <button class="overlay-clear-all" id="overlay-clear-all" data-fr="Effacer les filtres" data-en="Clear filters">Effacer les filtres</button>
                     <button class="overlay-apply" id="overlay-apply">
-                        <span id="overlay-apply-label">Voir les projets</span>
+                        <span id="overlay-apply-label" data-fr="Voir les projets" data-en="View projects">Voir les projets</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                     </button>
                 </div>
@@ -107,8 +112,8 @@
             <div class="project-hero-content">
 
                 <h1 class="project-hero-title">Solar Leap</h1>
-                <p class="project-hero-meta">Puzzle Platformer 3D • Unity / C#</p>
-                <p class="project-hero-team">Réalisé en équipe de 18 personnes • Septembre 2024 - Juin 2025</p>
+                <p class="project-hero-meta" data-fr="Puzzle Platformer 3D • Unity / C#" data-en="3D Puzzle Platformer • Unity / C#">Puzzle Platformer 3D • Unity / C#</p>
+                <p class="project-hero-team" data-fr="Réalisé en équipe de 18 personnes • Septembre 2024 - Juin 2025" data-en="Made by a team of 18 • September 2024 - June 2025">Réalisé en équipe de 18 personnes • Septembre 2024 - Juin 2025</p>
             </div>
         </div>
     </section>
@@ -120,16 +125,16 @@
                 <!-- Main Content -->
                 <div class="project-main">
                     <div class="project-section">
-                        <h2>Description</h2>
-                        <p>Solar Leap est un projet étudiant développé en équipe de 18 personnes, composée de Game
+                        <h2 data-fr="Description" data-en="Description">Description</h2>
+                        <p data-fr="Solar Leap est un projet étudiant développé en équipe de 18 personnes, composée de Game Programmers, Game Artists, Musics & Sound Designers, Game Designers et Producers. Le projet a été réalisé sur Unity en C# de septembre 2024 à juin 2025." data-en="Solar Leap is a student project developed by a team of 18, made up of Game Programmers, Game Artists, Music & Sound Designers, Game Designers and Producers. The project was built in Unity with C# from September 2024 to June 2025.">Solar Leap est un projet étudiant développé en équipe de 18 personnes, composée de Game
                             Programmers, Game Artists, Musics & Sound Designers, Game Designers et Producers. Le projet
                             a été réalisé sur Unity en C# de septembre 2024 à juin 2025.</p>
-                        <p>C'est un puzzle-platformer 3D développé pour PC et Nintendo Switch dans lequel on incarne
+                        <p data-fr="C'est un puzzle-platformer 3D développé pour PC et Nintendo Switch dans lequel on incarne Hélio un robot jardiner accompagné de sa fidèle amie Lucy la graine de tournesol." data-en="It's a 3D puzzle-platformer for PC and Nintendo Switch in which you play as Hélio, a gardening robot accompanied by his faithful friend Lucy, the sunflower seed.">C'est un puzzle-platformer 3D développé pour PC et Nintendo Switch dans lequel on incarne
                             Hélio un robot jardiner accompagné de sa fidèle amie Lucy la graine de tournesol.</p>
                     </div>
 
                     <div class="project-section">
-                        <h2>Vidéos</h2>
+                        <h2 data-fr="Vidéos" data-en="Videos">Vidéos</h2>
                         <div class="video-grid">
                             <div class="video-container">
                                 <iframe src="https://www.youtube.com/embed/4A_KmyMe-6k" title="Solar Leap Walkthrough"
@@ -143,12 +148,12 @@
                     </div>
 
                     <div class="project-section project-media">
-                        <h2>Mon travail</h2>
+                        <h2 data-fr="Mon travail" data-en="My work">Mon travail</h2>
                         <ul class="work-list">
-                            <li>Création de VFX et de tools pour les artistes</li>
-                            <li>Intégration des SFX, musiques et des VFX</li>
-                            <li>Implémentation des menus et des paramètres</li>
-                            <li>Rédaction de la documentation du projet (Technical Design Document / Game Feel Document)
+                            <li data-fr="Création de VFX et de tools pour les artistes" data-en="Creation of VFX and tools for artists">Création de VFX et de tools pour les artistes</li>
+                            <li data-fr="Intégration des SFX, musiques et des VFX" data-en="Integration of SFX, music and VFX">Intégration des SFX, musiques et des VFX</li>
+                            <li data-fr="Implémentation des menus et des paramètres" data-en="Menu and settings implementation">Implémentation des menus et des paramètres</li>
+                            <li data-fr="Rédaction de la documentation du projet (Technical Design Document / Game Feel Document)" data-en="Writing the project documentation (Technical Design Document / Game Feel Document)">Rédaction de la documentation du projet (Technical Design Document / Game Feel Document)
                             </li>
                         </ul>
                         <div class="carousel-grid">
@@ -160,16 +165,16 @@
                                         <div class="carousel-track">
                                             <figure class="carousel-slide">
                                                 <img src="../Gifs & Pics/Solar Leap/VFX/Roots.gif" alt="VFX Roots">
-                                                <figcaption>VFX - Racines</figcaption>
+                                                <figcaption data-fr="VFX - Racines" data-en="VFX - Roots">VFX - Racines</figcaption>
                                             </figure>
                                             <figure class="carousel-slide">
                                                 <img src="../Gifs & Pics/Solar Leap/VFX/earthquake.gif"
                                                     alt="VFX Earthquake">
-                                                <figcaption>VFX - Tremblement de terre</figcaption>
+                                                <figcaption data-fr="VFX - Tremblement de terre" data-en="VFX - Earthquake">VFX - Tremblement de terre</figcaption>
                                             </figure>
                                             <figure class="carousel-slide">
                                                 <img src="../Gifs & Pics/Solar Leap/VFX/dither.gif" alt="VFX Dither">
-                                                <figcaption>VFX - Effet Dither</figcaption>
+                                                <figcaption data-fr="VFX - Effet Dither" data-en="VFX - Dither effect">VFX - Effet Dither</figcaption>
                                             </figure>
                                         </div>
                                     </div>
@@ -189,30 +194,29 @@
 
                             <div>
                                 <h3 id="integration"
-                                    style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);">
-                                    Intégration</h3>
+                                    style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);" data-fr="Intégration" data-en="Integration">Intégration</h3>
                                 <div class="carousel" id="carousel-integration">
                                     <div class="carousel-track-container">
                                         <div class="carousel-track">
                                             <figure class="carousel-slide">
                                                 <img src="../Gifs & Pics/Solar Leap/Integration/Seeds.gif"
                                                     alt="Seeds Integration">
-                                                <figcaption>Intégration - Graines</figcaption>
+                                                <figcaption data-fr="Intégration - Graines" data-en="Integration - Seeds">Intégration - Graines</figcaption>
                                             </figure>
                                             <figure class="carousel-slide">
                                                 <img src="../Gifs & Pics/Solar Leap/Integration/CloudAndDisk.gif"
                                                     alt="Cloud and Disk">
-                                                <figcaption>Intégration - Nuage et Disque</figcaption>
+                                                <figcaption data-fr="Intégration - Nuage et Disque" data-en="Integration - Cloud and Disk">Intégration - Nuage et Disque</figcaption>
                                             </figure>
                                             <figure class="carousel-slide">
                                                 <img src="../Gifs & Pics/Solar Leap/Integration/MovablePlatform.gif"
                                                     alt="Movable Platform">
-                                                <figcaption>Intégration - Plateforme mobile</figcaption>
+                                                <figcaption data-fr="Intégration - Plateforme mobile" data-en="Integration - Movable platform">Intégration - Plateforme mobile</figcaption>
                                             </figure>
                                             <figure class="carousel-slide">
                                                 <img src="../Gifs & Pics/Solar Leap/Integration/ground detection.gif"
                                                     alt="Ground Detection">
-                                                <figcaption>Intégration - Détection du sol</figcaption>
+                                                <figcaption data-fr="Intégration - Détection du sol" data-en="Integration - Ground detection">Intégration - Détection du sol</figcaption>
                                             </figure>
                                         </div>
                                     </div>
@@ -232,23 +236,22 @@
 
                             <div>
                                 <h3 id="ui"
-                                    style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);">Menu
-                                    et Paramètres</h3>
+                                    style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);" data-fr="Menu et Paramètres" data-en="Menu and Settings">Menu et Paramètres</h3>
                                 <div class="carousel" id="carousel-ui">
                                     <div class="carousel-track-container">
                                         <div class="carousel-track">
                                             <figure class="carousel-slide">
                                                 <img src="../Gifs & Pics/Solar Leap/UI/SL_Main.png"
                                                     alt="Menu Principal">
-                                                <figcaption>Menu Principal</figcaption>
+                                                <figcaption data-fr="Menu Principal" data-en="Main Menu">Menu Principal</figcaption>
                                             </figure>
                                             <figure class="carousel-slide">
                                                 <img src="../Gifs & Pics/Solar Leap/UI/SL_Pause.png" alt="Menu Pause">
-                                                <figcaption>Menu Pause</figcaption>
+                                                <figcaption data-fr="Menu Pause" data-en="Pause Menu">Menu Pause</figcaption>
                                             </figure>
                                             <figure class="carousel-slide">
                                                 <img src="../Gifs & Pics/Solar Leap/UI/SL_Option.png" alt="Options">
-                                                <figcaption>Options</figcaption>
+                                                <figcaption data-fr="Options" data-en="Options">Options</figcaption>
                                             </figure>
                                         </div>
                                     </div>
@@ -268,8 +271,7 @@
 
                             <div>
                                 <h3 id="docs"
-                                    style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);">
-                                    Documentation</h3>
+                                    style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);" data-fr="Documentation" data-en="Documentation">Documentation</h3>
                                 <div class="carousel" id="carousel-docs">
                                     <div class="carousel-track-container">
                                         <div class="carousel-track">
@@ -302,7 +304,7 @@
                     </div>
 
                     <div class="project-section">
-                        <h2>L'équipe</h2>
+                        <h2 data-fr="L'équipe" data-en="The team">L'équipe</h2>
 
                         <ul class="team-list">
                             <li class="team-list-item">
@@ -311,7 +313,7 @@
                             </li>
                         </ul>
 
-                        <h3 class="team-category-title">Programmation</h3>
+                        <h3 class="team-category-title" data-fr="Programmation" data-en="Programming">Programmation</h3>
                         <ul class="team-list">
                             <li class="team-list-item">
                                 <strong>Mathias DAVRIL</strong>
@@ -351,7 +353,7 @@
                             </li>
                         </ul>
 
-                        <h3 class="team-category-title">Audio</h3>
+                        <h3 class="team-category-title" data-fr="Audio" data-en="Audio">Audio</h3>
                         <ul class="team-list">
                             <li class="team-list-item">
                                 <strong>Aurélien DEFER</strong>
@@ -383,7 +385,7 @@
                             </li>
                         </ul>
 
-                        <h3 class="team-category-title">Producing & Marketing</h3>
+                        <h3 class="team-category-title" data-fr="Producing & Marketing" data-en="Producing & Marketing">Producing & Marketing</h3>
                         <ul class="team-list">
                             <li class="team-list-item">
                                 <strong>Harold CHENEVIER</strong>
@@ -405,23 +407,23 @@
                 <!-- Sidebar -->
                 <aside class="project-sidebar">
                     <div class="project-info-card">
-                        <h3>Informations</h3>
+                        <h3 data-fr="Informations" data-en="Information">Informations</h3>
                         <dl class="info-list">
-                            <dt>Genre</dt>
-                            <dd>Puzzle Platformer 3D</dd>
-                            <dt>Plateforme</dt>
-                            <dd>Nintendo Switch & PC</dd>
-                            <dt>Moteur</dt>
+                            <dt data-fr="Genre" data-en="Genre">Genre</dt>
+                            <dd data-fr="Puzzle Platformer 3D" data-en="3D Puzzle Platformer">Puzzle Platformer 3D</dd>
+                            <dt data-fr="Plateforme" data-en="Platform">Plateforme</dt>
+                            <dd data-fr="Nintendo Switch & PC" data-en="Nintendo Switch & PC">Nintendo Switch & PC</dd>
+                            <dt data-fr="Moteur" data-en="Engine">Moteur</dt>
                             <dd>Unity</dd>
-                            <dt>Langage</dt>
+                            <dt data-fr="Langage" data-en="Language">Langage</dt>
                             <dd>C#</dd>
-                            <dt>Durée</dt>
-                            <dd>Septembre 2024 - Juin 2025</dd>
+                            <dt data-fr="Durée" data-en="Duration">Durée</dt>
+                            <dd data-fr="Septembre 2024 - Juin 2025" data-en="September 2024 - June 2025">Septembre 2024 - Juin 2025</dd>
                         </dl>
                     </div>
 
                     <div class="project-info-card">
-                        <h3>Mon rôle</h3>
+                        <h3 data-fr="Mon rôle" data-en="My role">Mon rôle</h3>
                         <div class="role-tags">
                             <span class="tag tag--large">Gameplay Programming</span>
                             <span class="tag tag--large">Tech Art</span>
@@ -432,7 +434,7 @@
                     </div>
 
                     <a href="https://isart-digital.itch.io/solarleap" target="_blank" class="btn btn-primary btn-full">
-                        <span>Jouer sur itch.io</span>
+                        <span data-fr="Jouer sur itch.io" data-en="Play on itch.io">Jouer sur itch.io</span>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
                             <path d="M7 17L17 7M17 7H7M17 7V17" />
@@ -446,7 +448,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Louis Garrigues. Tous droits réservés.</p>
+            <p data-fr="&copy; 2025 Louis Garrigues. Tous droits réservés." data-en="&copy; 2025 Louis Garrigues. All rights reserved.">&copy; 2025 Louis Garrigues. Tous droits réservés.</p>
         </div>
     </footer>
 
