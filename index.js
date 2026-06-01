@@ -66,6 +66,14 @@ function applyLanguage(lang) {
 // ========================================
 function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
+    updateCvLink();
+}
+
+function updateCvLink() {
+    const link = document.getElementById('cv-link');
+    if (!link) return;
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    link.href = isLight ? link.dataset.cvLight : link.dataset.cvNight;
 }
 
 function initThemeToggle() {

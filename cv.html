@@ -31,6 +31,75 @@
             --radius-lg: 16px;
         }
 
+        /* Dark theme — applies on screen and in print/PDF */
+        html[data-theme="dark"] {
+            --bg-page: #0a0a0f;
+            --bg-card: #1a1a24;
+            --text-primary: #f0f0f5;
+            --text-secondary: #a0a0b0;
+            --text-muted: #606070;
+            --accent-primary: #edbc66;
+            --accent-secondary: #2baec2;
+            --accent-primary-rgb: 237, 188, 102;
+            --accent-secondary-rgb: 34, 211, 238;
+            --gradient: linear-gradient(135deg, #edbc66, #2baec2);
+        }
+
+        html[data-theme="dark"] .card {
+            border-color: rgba(var(--accent-secondary-rgb), 0.16);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        html[data-theme="dark"] .cv-header {
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+        }
+
+        /* Theme toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            z-index: 50;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(var(--accent-secondary-rgb), 0.35);
+            background: var(--bg-card);
+            color: var(--accent-primary);
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+            transition: transform 0.15s ease, border-color 0.15s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-1px);
+            border-color: var(--accent-primary);
+        }
+
+        .theme-toggle svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .theme-toggle .icon-sun {
+            display: none;
+        }
+
+        .theme-toggle .icon-moon {
+            display: block;
+        }
+
+        html[data-theme="dark"] .theme-toggle .icon-sun {
+            display: block;
+        }
+
+        html[data-theme="dark"] .theme-toggle .icon-moon {
+            display: none;
+        }
+
         *,
         *::before,
         *::after {
@@ -149,7 +218,7 @@
             align-items: center;
             gap: 6px;
             padding: 10px;
-            background: #ffffff;
+            background: var(--bg-card);
             border: 1px solid rgba(var(--accent-secondary-rgb), 0.2);
             border-radius: var(--radius-md);
         }
@@ -158,6 +227,9 @@
             width: 92px;
             height: 92px;
             display: block;
+            background: #ffffff;
+            padding: 6px;
+            border-radius: 6px;
         }
 
         .qr-caption {
@@ -372,11 +444,20 @@
         /* ---------------- Print ---------------- */
         @page {
             size: A4;
-            margin: 4mm 8mm 8mm;
+            margin: 0;
         }
 
         @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
             body {
+                padding: 5mm 10mm 10mm;
+            }
+
+            html:not([data-theme="dark"]) body {
                 background: #ffffff;
             }
 
@@ -394,11 +475,26 @@
             .entry {
                 break-inside: avoid;
             }
+
+            .theme-toggle {
+                display: none !important;
+            }
         }
     </style>
+    <script>
+        (function () {
+            var saved;
+            try { saved = localStorage.getItem('theme'); } catch (e) { saved = null; }
+            document.documentElement.setAttribute('data-theme', saved || 'dark');
+        })();
+    </script>
 </head>
 
 <body>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Changer de thème">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+    </button>
     <main class="page">
         <!-- Header -->
         <header class="cv-header">
@@ -644,6 +740,14 @@
             </div>
         </div>
     </main>
+    <script>
+        document.getElementById('theme-toggle').addEventListener('click', function () {
+            var root = document.documentElement;
+            var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            root.setAttribute('data-theme', next);
+            try { localStorage.setItem('theme', next); } catch (e) {}
+        });
+    </script>
 </body>
 
 </html>
