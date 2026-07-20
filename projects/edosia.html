@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Edosia - Prototype de RPG développé en stage chez Rage Studio sur Unity, avec monde procédural et système de craft complexe.">
+    <title>Edosia | Louis Garrigues</title>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../carousel.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Louis Garrigues</a>
+            <div class="nav-search">
+                <svg class="nav-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+                </svg>
+                <input type="text" id="filter-input" class="nav-search-input" placeholder="Unity, VFX, Shaders…" data-placeholder-fr="Unity, VFX, Shaders…" data-placeholder-en="Unity, VFX, Shaders…" readonly>
+                <button class="filter-clear" id="filter-clear" aria-label="Effacer">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            </button>
+            <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">EN</button>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html#projects" class="nav-link" data-fr="Portfolio" data-en="Portfolio">Portfolio</a></li>
+                <li><a href="../index.html#about" class="nav-link" data-fr="À Propos" data-en="About">À Propos</a></li>
+                <li><a href="../index.html#contact" class="nav-link nav-link--cta" data-fr="Contact" data-en="Contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay" aria-hidden="true">
+        <div class="search-overlay-panel">
+            <div class="container">
+                <div class="search-overlay-bar">
+                    <svg class="search-overlay-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+                    </svg>
+                    <input type="text" id="overlay-input" class="search-overlay-input" placeholder="Rechercher par technologie, rôle…" data-placeholder-fr="Rechercher par technologie, rôle…" data-placeholder-en="Search by technology, role…" autocomplete="off" spellcheck="false">
+                    <button class="search-overlay-close" id="search-overlay-close" aria-label="Fermer">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                        <span>Esc</span>
+                    </button>
+                </div>
+                <div class="search-overlay-groups">
+                    <div class="search-overlay-group">
+                        <p class="search-overlay-group-label" data-fr="Moteur" data-en="Engine">Moteur</p>
+                        <div class="search-overlay-tags">
+                            <button class="overlay-tag" data-tag="unity">Unity</button>
+                            <button class="overlay-tag" data-tag="unreal">Unreal</button>
+                            <button class="overlay-tag" data-tag="godot">Godot</button>
+                        </div>
+                    </div>
+                    <div class="search-overlay-group">
+                        <p class="search-overlay-group-label" data-fr="Compétences" data-en="Skills">Compétences</p>
+                        <div class="search-overlay-tags">
+                            <button class="overlay-tag" data-tag="vfx">VFX</button>
+                            <button class="overlay-tag" data-tag="tech art">Tech Art</button>
+                            <button class="overlay-tag" data-tag="gameplay programming">Gameplay Programming</button>
+                            <button class="overlay-tag" data-tag="gamefeel">Gamefeel</button>
+                            <button class="overlay-tag" data-tag="ui">UI</button>
+                            <button class="overlay-tag" data-tag="game design">Game Design</button>
+                            <button class="overlay-tag" data-tag="level design">Level Design</button>
+                            <button class="overlay-tag" data-tag="game art">Game Art</button>
+                            <button class="overlay-tag" data-tag="shaders">Shaders</button>
+                            <button class="overlay-tag" data-tag="programming">Programming</button>
+                            <button class="overlay-tag" data-tag="mathématiques" data-fr="Mathématiques" data-en="Mathematics">Mathématiques</button>
+                            <button class="overlay-tag" data-tag="algorithmie" data-fr="Algorithmie" data-en="Algorithms">Algorithmie</button>
+                            <button class="overlay-tag" data-tag="rnd">R&D</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-overlay-footer">
+                    <button class="overlay-clear-all" id="overlay-clear-all" data-fr="Effacer les filtres" data-en="Clear filters">Effacer les filtres</button>
+                    <button class="overlay-apply" id="overlay-apply">
+                        <span id="overlay-apply-label" data-fr="Voir les projets" data-en="View projects">Voir les projets</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="search-overlay-backdrop" id="search-overlay-backdrop"></div>
+    </div>
+
+    <section class="project-hero"
+        style="background-image: url('../Gifs & Pics/Edosia/Recipe Editor/Recipe Editor 1.png');">
+        <div class="hero-bg">
+            <div class="hero-glow hero-glow--1"></div>
+            <div class="hero-glow hero-glow--2"></div>
+        </div>
+        <div class="container">
+            <div class="project-hero-content">
+
+                <h1 class="project-hero-title">Edosia</h1>
+                <p class="project-hero-meta" data-fr="RPG • Prototype • Unity / C#" data-en="RPG • Prototype • Unity / C#">RPG • Prototype • Unity / C#</p>
+                <p class="project-hero-team" data-fr="Stage en autonomie chez Rage Studio (à distance) • Juin - Août 2026 (en cours)" data-en="Self-directed internship at Rage Studio (remote) • June - August 2026 (ongoing)">Stage en autonomie chez Rage Studio (à distance) • Juin - Août 2026 (en cours)</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-page-content">
+        <div class="container">
+            <div class="project-grid">
+                <div class="project-main">
+                    <div class="project-section">
+                        <h2 data-fr="Description" data-en="Description">Description</h2>
+                        <p data-fr="Edosia est un prototype de RPG développé lors d'un stage en autonomie, actuellement en cours, chez Rage Studio (à distance). Inspiré des premiers Zelda, le jeu se déroule dans un monde généré procéduralement et propose un système de craft complexe, à la manière de Minecraft." data-en="Edosia is an RPG prototype developed during an ongoing self-directed internship at Rage Studio (remote). Inspired by the early Zelda games, it takes place in a procedurally generated world and features a complex crafting system, similar to Minecraft.">Edosia est un prototype de RPG développé lors d'un stage en
+                            autonomie, actuellement en cours, chez Rage Studio (à distance). Inspiré des premiers Zelda,
+                            le jeu se déroule dans un monde généré procéduralement et propose un système de craft
+                            complexe, à la manière de Minecraft.</p>
+                        <p data-fr="Sur ce projet, je suis en charge de la programmation gameplay et de l'UI. J'ai notamment développé plusieurs outils d'édition internes (objets, tags, recettes de craft, établis) permettant à l'équipe de créer et d'itérer rapidement sur le contenu du jeu." data-en="On this project, I'm in charge of gameplay programming and UI. I notably developed several internal editor tools (items, tags, crafting recipes, workbenches) allowing the team to quickly create and iterate on game content.">Sur ce projet, je suis en charge de la programmation gameplay et de
+                            l'UI. J'ai notamment développé plusieurs outils d'édition internes (objets, tags, recettes
+                            de craft, établis) permettant à l'équipe de créer et d'itérer rapidement sur le contenu du
+                            jeu.</p>
+                    </div>
+
+                    <div class="project-section project-media">
+                        <h2 data-fr="Mon travail" data-en="My work">Mon travail</h2>
+                        <ul class="work-list">
+                            <li data-fr="Programmation gameplay" data-en="Gameplay programming">Programmation gameplay</li>
+                            <li data-fr="Développement de l'interface utilisateur (UI)" data-en="User interface (UI) development">Développement de l'interface utilisateur (UI)</li>
+                            <li data-fr="Création d'outils d'édition internes pour les données de jeu (items, tags, recettes, établis)" data-en="Creation of internal editor tools for game data (items, tags, recipes, workbenches)">Création d'outils d'édition internes pour les données de jeu
+                                (items, tags, recettes, établis)</li>
+                            <li data-fr="Système d'inventaire et intégration avec le système de craft (en cours)" data-en="Inventory system and integration with the crafting system (in progress)">Système d'inventaire et intégration avec le système de craft (en
+                                cours)</li>
+                        </ul>
+                        <div class="carousel-grid">
+                            <div>
+                                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);" data-fr="Éditeur d'Items & Tags" data-en="Item & Tag Editor">Éditeur d'Items & Tags</h3>
+                                <div class="carousel" id="carousel-items">
+                                    <div class="carousel-track-container">
+                                        <div class="carousel-track">
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/Edosia/Items & Tags Editor/New Item Editor.png"
+                                                    alt="New Item Editor">
+                                                <figcaption data-fr="Création d'un nouvel item" data-en="Creating a new item">Création d'un nouvel item</figcaption>
+                                            </figure>
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/Edosia/Items & Tags Editor/Tag Editor.png"
+                                                    alt="Tag Editor">
+                                                <figcaption data-fr="Éditeur de tags" data-en="Tag editor">Éditeur de tags</figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                    <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path d="M15 18l-6-6 6-6" />
+                                        </svg>
+                                    </button>
+                                    <button class="carousel-btn carousel-btn--next" aria-label="Next slide">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path d="M9 18l6-6-6-6" />
+                                        </svg>
+                                    </button>
+                                    <div class="carousel-indicators"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);" data-fr="Éditeur de Recettes" data-en="Recipe Editor">Éditeur de Recettes</h3>
+                                <div class="carousel" id="carousel-recipes">
+                                    <div class="carousel-track-container">
+                                        <div class="carousel-track">
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/Edosia/Recipe Editor/Recipe Editor 1.png"
+                                                    alt="Recipe Editor 1">
+                                                <figcaption data-fr="Éditeur de recette de craft" data-en="Crafting recipe editor">Éditeur de recette de craft</figcaption>
+                                            </figure>
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/Edosia/Recipe Editor/Recipe Editor 2.png"
+                                                    alt="Recipe Editor 2">
+                                                <figcaption data-fr="Éditeur de recette de craft" data-en="Crafting recipe editor">Éditeur de recette de craft</figcaption>
+                                            </figure>
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/Edosia/Recipe Editor/Recipe Editor 3.png"
+                                                    alt="Recipe Editor 3">
+                                                <figcaption data-fr="Éditeur de recette de craft" data-en="Crafting recipe editor">Éditeur de recette de craft</figcaption>
+                                            </figure>
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/Edosia/Recipe Editor/Recipe Editor 4.png"
+                                                    alt="Recipe Editor 4">
+                                                <figcaption data-fr="Éditeur de recette de craft" data-en="Crafting recipe editor">Éditeur de recette de craft</figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                    <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path d="M15 18l-6-6 6-6" />
+                                        </svg>
+                                    </button>
+                                    <button class="carousel-btn carousel-btn--next" aria-label="Next slide">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path d="M9 18l6-6-6-6" />
+                                        </svg>
+                                    </button>
+                                    <div class="carousel-indicators"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--color-text-primary);" data-fr="Éditeur d'Établis" data-en="Workbench Editor">Éditeur d'Établis</h3>
+                                <div class="carousel" id="carousel-workbench">
+                                    <div class="carousel-track-container">
+                                        <div class="carousel-track">
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/Edosia/Workbench Editor/New Workbench Editor.png"
+                                                    alt="New Workbench Editor">
+                                                <figcaption data-fr="Création d'un nouvel établi" data-en="Creating a new workbench">Création d'un nouvel établi</figcaption>
+                                            </figure>
+                                            <figure class="carousel-slide">
+                                                <img src="../Gifs & Pics/Edosia/Workbench Editor/Workbench Editor.png"
+                                                    alt="Workbench Editor">
+                                                <figcaption data-fr="Éditeur d'établi" data-en="Workbench editor">Éditeur d'établi</figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                    <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path d="M15 18l-6-6 6-6" />
+                                        </svg>
+                                    </button>
+                                    <button class="carousel-btn carousel-btn--next" aria-label="Next slide">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path d="M9 18l6-6-6-6" />
+                                        </svg>
+                                    </button>
+                                    <div class="carousel-indicators"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="project-sidebar">
+                    <div class="project-info-card">
+                        <h3 data-fr="Informations" data-en="Information">Informations</h3>
+                        <dl class="info-list">
+                            <dt data-fr="Genre" data-en="Genre">Genre</dt>
+                            <dd data-fr="RPG (prototype)" data-en="RPG (prototype)">RPG (prototype)</dd>
+                            <dt data-fr="Studio" data-en="Studio">Studio</dt>
+                            <dd data-fr="Rage Studio (à distance)" data-en="Rage Studio (remote)">Rage Studio (à distance)</dd>
+                            <dt data-fr="Plateforme" data-en="Platform">Plateforme</dt>
+                            <dd>PC</dd>
+                            <dt data-fr="Moteur" data-en="Engine">Moteur</dt>
+                            <dd>Unity</dd>
+                            <dt data-fr="Langage" data-en="Language">Langage</dt>
+                            <dd>C#</dd>
+                            <dt data-fr="Durée" data-en="Duration">Durée</dt>
+                            <dd data-fr="Juin - Août 2026 (stage en cours)" data-en="June - August 2026 (ongoing internship)">Juin - Août 2026 (stage en cours)</dd>
+                        </dl>
+                    </div>
+
+                    <div class="project-info-card">
+                        <h3 data-fr="Mon rôle" data-en="My role">Mon rôle</h3>
+                        <div class="role-tags">
+                            <span class="tag tag--large">Gameplay Programming</span>
+                            <span class="tag tag--large">UI</span>
+                            <span class="tag tag--large">Gamefeel</span>
+                            <span class="tag tag--large" data-fr="Game Design" data-en="Game Design">Game Design</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p data-fr="&copy; 2025 Louis Garrigues. Tous droits réservés." data-en="&copy; 2025 Louis Garrigues. All rights reserved.">&copy; 2025 Louis Garrigues. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="../index.js"></script>
+    <script src="../carousel.js"></script>
+</body>
+
+</html>
